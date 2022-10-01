@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IonButton, IonInput } from "@ionic/react";
 import { ISet } from "entities/set";
-import { useUpdateSet } from "features/set/update-set/model";
+import { useUpdateSet } from "../model";
 
 export const UpdateSet = ({ set }: { set: ISet }) => {
   const [name, setName] = useState(set.name);

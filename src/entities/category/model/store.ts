@@ -1,5 +1,6 @@
 import { ICategory } from "../lib";
-import { makeAutoObservable } from "mobx";
+import { autorun, makeAutoObservable, toJS } from "mobx";
+import { setStore } from "entities/set";
 
 class CategoryStore {
   categories: ICategory[] = [];
@@ -14,3 +15,6 @@ class CategoryStore {
 }
 
 export const categoryStore = new CategoryStore();
+autorun(() => {
+  console.log("CategoryStore:", toJS(setStore));
+});

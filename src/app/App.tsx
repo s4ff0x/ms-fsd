@@ -19,7 +19,7 @@ import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
 
 /* Theme variables */
-import "./app/theme/variables.css";
+import "app/theme/variables.css";
 import { observer } from "mobx-react-lite";
 import { userStore } from "entities/user";
 import { SignInPage } from "pages/auth/sign-in-page/sign-in-page";
@@ -28,6 +28,8 @@ import { useAuthWatcher } from "features/auth";
 import Home from "pages/home/home";
 import { UpdateSetPage } from "pages/set/update-set-page";
 import { CreateSetPage } from "pages/set/create-set-page";
+import { CreateCategoryPage } from "pages/category/create-category-page";
+import { UpdateCategoryPage } from "pages/category/update-category-page";
 
 setupIonicReact();
 
@@ -45,11 +47,17 @@ const App: React.FC = observer(() => {
             <Route exact path="/set/create">
               <CreateSetPage />
             </Route>
-            <Route
-              exact
-              path={`/set/edit/:setId`}
-              render={() => <UpdateSetPage />}
-            />
+
+            <Route exact path={`/set/edit/:setId`}>
+              <UpdateSetPage />
+            </Route>
+
+            <Route exact path="/category/create">
+              <CreateCategoryPage />
+            </Route>
+            <Route exact path={`/category/edit/:categoryId`}>
+              <UpdateCategoryPage />
+            </Route>
             <Route exact path={["/", "/sign-in", "/sign-out"]}>
               <Redirect to={"/home"} />
             </Route>

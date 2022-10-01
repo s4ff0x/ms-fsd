@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { IonButton, IonInput } from "@ionic/react";
-import { createCategory } from "features/category/create-category/model";
+import { useCreateCategory } from "../model";
 
 export const CreateCategory = () => {
   const [name, setName] = useState("");
+  const createCategory = useCreateCategory();
   return (
     <div>
       <IonInput
@@ -13,7 +14,7 @@ export const CreateCategory = () => {
         onIonChange={(e: CustomEvent) => setName(e.detail.value)}
       />
       <IonButton onClick={() => createCategory({ name, setIds: [] })}>
-        Create set
+        Create category
       </IonButton>
     </div>
   );
