@@ -1,2 +1,2 @@
-export * from "../entities/firebase";
+export * from "./ui";
 export * from "./lib";

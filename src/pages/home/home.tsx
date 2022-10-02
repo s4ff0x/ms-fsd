@@ -3,9 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { SignOut } from "features/auth";
 import { SetList } from "entities/set";
-import { Layout } from "shared/ui/layout/layout";
+import { Layout } from "shared/ui";
 import { useSetsState } from "features/set/fb-watcher";
-import { useCategoriesState } from "features/category/fb-watcher/use-watcher";
+import { useCategoriesState } from "features/category/fb-watcher";
 import { CategoryList } from "entities/category";
 
 const Home: React.FC = () => {

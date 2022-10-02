@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IonButton, IonInput } from "@ionic/react";
-import { useCreateSet } from "features/set/create-set/model";
+import { useCreateSet } from "../model";
 
 export const CreateSet = () => {
   const [name, setName] = useState("");

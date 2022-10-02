@@ -1,6 +1,4 @@
-import { Redirect, Route } from "react-router-dom";
-import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
+import { IonApp, setupIonicReact } from "@ionic/react";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -21,62 +19,34 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "app/theme/variables.css";
 import { observer } from "mobx-react-lite";
-import { userStore } from "entities/user";
-import { SignInPage } from "pages/auth/sign-in-page/sign-in-page";
-import { SignUpPage } from "pages/auth/sign-up-page/sign-up-page";
+
 import { useAuthWatcher } from "features/auth";
-import Home from "pages/home/home";
-import { UpdateSetPage } from "pages/set/update-set-page";
-import { CreateSetPage } from "pages/set/create-set-page";
-import { CreateCategoryPage } from "pages/category/create-category-page";
-import { UpdateCategoryPage } from "pages/category/update-category-page";
+
+import Router from "app/router";
+import { autorun, toJS } from "mobx";
+import { userStore } from "entities/user";
+import { setStore } from "entities/set";
+import { categoryStore } from "entities/category";
 
 setupIonicReact();
+
+autorun(() => {
+  console.log(
+    "\n UserStore:",
+    toJS(userStore),
+    "\n SetStore:",
+    toJS(setStore),
+    "\n CategoryStore:",
+    toJS(categoryStore)
+  );
+});
 
 const App: React.FC = observer(() => {
   useAuthWatcher();
 
   return (
     <IonApp>
-      <IonReactRouter>
-        {userStore.shouldShowUserContent() && (
-          <IonRouterOutlet>
-            <Route exact path="/home">
-              <Home />
-            </Route>
-            <Route exact path="/set/create">
-              <CreateSetPage />
-            </Route>
-
-            <Route exact path={`/set/edit/:setId`}>
-              <UpdateSetPage />
-            </Route>
-
-            <Route exact path="/category/create">
-              <CreateCategoryPage />
-            </Route>
-            <Route exact path={`/category/edit/:categoryId`}>
-              <UpdateCategoryPage />
-            </Route>
-            <Route exact path={["/", "/sign-in", "/sign-out"]}>
-              <Redirect to={"/home"} />
-            </Route>
-          </IonRouterOutlet>
-        )}
-        {userStore.shouldShowAuth() && (
-          <IonRouterOutlet>
-            <Route exact path="/sign-in">
-              <SignInPage />
-            </Route>
-            <Route exact path="/sign-up">
-              <SignUpPage />
-            </Route>
-            <Route exact path={["/", "/home"]}>
-              <Redirect to={"/sign-in"} />
-            </Route>
-          </IonRouterOutlet>
-        )}
-      </IonReactRouter>
+      <Router />
     </IonApp>
   );
 });

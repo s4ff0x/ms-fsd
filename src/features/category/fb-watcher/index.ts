@@ -1,1 +1,1 @@
-export * from "features/set/fb-watcher/use-sets-watcher";
+export * from "./use-watcher";

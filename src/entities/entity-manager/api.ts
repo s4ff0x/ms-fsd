@@ -1,4 +1,4 @@
-import { auth, db } from "entities/firebase/firebase";
+import { db } from "shared/lib/firebase";
 import {
   collection,
   deleteDoc,
@@ -8,12 +8,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 
-// TODO: remove any
-
-export const FB_COLLECTIONS = {
-  CATEGORIES: "categories",
-  SETS: "sets",
-};
+// FIXME: remove any
 
 export const adaptEntityForUi = (doc: any) => {
   return {
@@ -24,21 +19,19 @@ export const adaptEntityForUi = (doc: any) => {
   };
 };
 
-export const currentUserUID = () => auth.currentUser?.uid || "";
-
 export const adaptEntityForServer = (entity: any) => {
   const { uid, ...rest } = entity;
   return rest;
 };
 
 export const entityCreator =
-  <T>(col: string, callback?: () => void) =>
+  <T>(col: string, currentUserUID: string, callback?: () => void) =>
   async (data: T) => {
     const newEntity = doc(collection(db, col));
 
     await setDoc(newEntity, {
       ...data,
-      userId: currentUserUID(),
+      userId: currentUserUID,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     });

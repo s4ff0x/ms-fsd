@@ -1,7 +1,7 @@
 import { onAuthStateChanged, User } from "firebase/auth";
 import { useEffect } from "react";
-import { auth } from "entities/firebase";
 import { userStore } from "entities/user";
+import { auth } from "shared";
 
 export const useAuthWatcher = () => {
   useEffect(() => {

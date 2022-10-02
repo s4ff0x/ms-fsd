@@ -1,4 +1,4 @@
-import { autorun, makeAutoObservable, toJS } from "mobx";
+import { makeAutoObservable } from "mobx";
 import { IUser } from "../lib";
 
 class UserStore {
@@ -20,7 +20,3 @@ class UserStore {
 }
 
 export const userStore = new UserStore();
-
-autorun(() => {
-  console.log("UserStore:", toJS(userStore));
-});

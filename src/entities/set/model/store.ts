@@ -1,5 +1,5 @@
 import { ISet } from "../lib";
-import { autorun, makeAutoObservable, toJS } from "mobx";
+import { makeAutoObservable } from "mobx";
 
 class SetStore {
   sets: ISet[] = [];
@@ -14,7 +14,3 @@ class SetStore {
 }
 
 export const setStore = new SetStore();
-
-autorun(() => {
-  console.log("SetStore:", toJS(setStore));
-});
