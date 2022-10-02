@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 import {
   EMPTY_CATEGORY_LIST_TITLE,
   getCategoryUpdateRouteDynamic,
-} from "entities/category/lib";
+} from "../lib";
 
 export const CategoryList = observer(() => {
   const history = useHistory();

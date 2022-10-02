@@ -1,8 +1,8 @@
 import React from "react";
-import { UpdateSet } from "features/set/update-set";
 import { useParams } from "react-router";
 import { setStore } from "entities/set";
 import { Layout } from "shared/ui";
+import { UpdateSetForm } from "widgets/set/update-set-form";
 
 export const UpdateSetPage = () => {
   const params = useParams<{ setId: string }>();
@@ -11,7 +11,7 @@ export const UpdateSetPage = () => {
   if (!set) return null;
   return (
     <Layout title={"Update set"} withBackButton>
-      <UpdateSet set={set} />
+      <UpdateSetForm set={set} />
     </Layout>
   );
 };

@@ -1,9 +1,13 @@
 import { uid } from "shared";
 
 export interface ITerm {
-  id: string;
-  terms: string;
+  uid: string;
+  term: string;
   definition: string;
+}
+export interface ITermEditable extends ITerm {
+  onChange?: (term: string, definition: string) => void;
+  onDelete?: () => void;
 }
 
 export interface ISet {
@@ -28,7 +32,7 @@ export const userIsOwner = (userId: string, set: ISet) => {
   return set.userId === userId;
 };
 
-export const getBlankTerm = () => ({
+export const getNewTerm = () => ({
   term: "",
   definition: "",
   uid: uid(),
@@ -42,3 +46,5 @@ export const getSetRouteUpdateDynamic = (uid: string) =>
   `${SET_ROUTE}/update/${uid}`;
 export const getSetRouteUpdate = () => `${SET_ROUTE}/update/:setId`;
 export const getSetRouteCreate = () => `${SET_ROUTE}/create`;
+
+export const FB_COLLECTION_SET = "sets";

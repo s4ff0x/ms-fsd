@@ -1,11 +1,11 @@
 import React from "react";
-import { CreateSet } from "features/set/create-set";
 import { Layout } from "shared/ui";
+import { CreateSetForm } from "widgets/set/create-set-form";
 
 export const CreateSetPage = () => {
   return (
     <Layout title={"Create Set"} withBackButton>
-      <CreateSet />
+      <CreateSetForm />
     </Layout>
   );
 };

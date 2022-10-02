@@ -19,3 +19,5 @@ export const getCategoryUpdateRouteDynamic = (uid: string) =>
 export const getCategoryUpdateRoute = () =>
   `${CATEGORY_ROUTE}/update/:categoryId`;
 export const getCategoryCreateRoute = () => `${CATEGORY_ROUTE}/create`;
+
+export const FB_COLLECTION_CATEGORY = "categories";
