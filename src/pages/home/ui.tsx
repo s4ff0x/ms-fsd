@@ -2,7 +2,7 @@ import { IonItem } from "@ionic/react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { SignOut } from "features/auth";
-import { SetList } from "entities/set";
+import { getSetRouteCreate, SetList } from "entities/set";
 import { Layout } from "shared/ui";
 import { useSetsState } from "features/set/fb-watcher";
 import { useCategoriesState } from "features/category/fb-watcher";
@@ -19,7 +19,7 @@ const Home: React.FC = () => {
       </IonItem>
       <CategoryList />
       <IonItem>
-        <Link to={"/set/create"}>Create set</Link>
+        <Link to={getSetRouteCreate()}>Create set</Link>
       </IonItem>
       <SetList />
       <SignOut />

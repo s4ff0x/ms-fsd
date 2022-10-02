@@ -1,6 +1,10 @@
 import { setStore } from "../model/store";
 import { observer } from "mobx-react-lite";
 import { useHistory } from "react-router";
+import {
+  EMPTY_SET_LIST_TITLE,
+  getSetRouteUpdateDynamic,
+} from "entities/set/lib";
 
 export const SetList = observer(() => {
   const history = useHistory();
@@ -11,7 +15,7 @@ export const SetList = observer(() => {
           <div
             key={set.uid}
             onClick={() => {
-              history.push(`/set/edit/${set.uid}`);
+              history.push(getSetRouteUpdateDynamic(set.uid));
             }}
           >
             <div>{set.name}</div>
@@ -19,7 +23,7 @@ export const SetList = observer(() => {
           </div>
         ))
       ) : (
-        <div>There are no sets</div>
+        <div>{EMPTY_SET_LIST_TITLE}</div>
       )}
     </div>
   );

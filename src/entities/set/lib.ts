@@ -33,3 +33,12 @@ export const getBlankTerm = () => ({
   definition: "",
   uid: uid(),
 });
+
+export const EMPTY_SET_TITLE = "There are no terms";
+export const EMPTY_SET_LIST_TITLE = "There are no sets";
+
+export const SET_ROUTE = "/set";
+export const getSetRouteUpdateDynamic = (uid: string) =>
+  `${SET_ROUTE}/update/${uid}`;
+export const getSetRouteUpdate = () => `${SET_ROUTE}/update/:setId`;
+export const getSetRouteCreate = () => `${SET_ROUTE}/create`;

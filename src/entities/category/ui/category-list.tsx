@@ -1,6 +1,10 @@
 import { categoryStore } from "../model/store";
 import { observer } from "mobx-react-lite";
 import { useHistory } from "react-router";
+import {
+  EMPTY_CATEGORY_LIST_TITLE,
+  getCategoryUpdateRouteDynamic,
+} from "entities/category/lib";
 
 export const CategoryList = observer(() => {
   const history = useHistory();
@@ -11,7 +15,7 @@ export const CategoryList = observer(() => {
           <div
             key={category.uid}
             onClick={() => {
-              history.push(`/category/edit/${category.uid}`);
+              history.push(getCategoryUpdateRouteDynamic(category.uid));
             }}
           >
             <div>{category.name}</div>
@@ -19,7 +23,7 @@ export const CategoryList = observer(() => {
           </div>
         ))
       ) : (
-        <div>There are no categories</div>
+        <div>{EMPTY_CATEGORY_LIST_TITLE}</div>
       )}
     </div>
   );
