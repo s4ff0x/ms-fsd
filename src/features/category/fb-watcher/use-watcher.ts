@@ -4,7 +4,7 @@ import { runInAction } from "mobx";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { categoryStore, FB_COLLECTION_CATEGORY } from "entities/category";
 import { auth, db } from "shared";
-import { adaptEntityForUi } from "entities/entity-manager";
+import { adaptEntityForUi } from "entities/firebase-entity";
 
 export const useCategoriesState = () => {
   useEffect(() => {

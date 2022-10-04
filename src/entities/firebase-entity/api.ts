@@ -24,7 +24,7 @@ export const adaptEntityForServer = (entity: any) => {
   return rest;
 };
 
-export const entityCreator =
+export const getCreateAction =
   <T>(col: string, currentUserUID: string, callback?: () => void) =>
   async (data: T) => {
     const newEntity = doc(collection(db, col));
@@ -39,8 +39,8 @@ export const entityCreator =
     callback && callback();
   };
 
-export const entityUpdater =
-  <T>(col: string, callback?: () => void) =>
+export const getUpdateAction =
+  <T>(col: string, callback: () => void = () => {}) =>
   async (data: T, uid: string) => {
     const entity = doc(db, `${col}/${uid}`);
 
@@ -49,13 +49,14 @@ export const entityUpdater =
       updatedAt: serverTimestamp(),
     });
 
-    callback && callback();
+    callback();
   };
 
-export const entityDeleter =
-  (col: string, callback?: () => void) => async (uid: string) => {
+export const getDeleteAction =
+  (col: string, callback: () => void = () => {}) =>
+  async (uid: string) => {
     const entity = doc(db, `${col}`, uid);
 
     await deleteDoc(entity);
-    callback && callback();
+    callback();
   };

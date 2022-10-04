@@ -3,17 +3,17 @@ import {
   ICategoryForCreation,
   FB_COLLECTION_CATEGORY,
 } from "entities/category";
-import { entityDeleter, entityUpdater } from "entities/entity-manager";
+import { getDeleteAction, getUpdateAction } from "entities/firebase-entity";
 
 export const useUpdateCategory = () => {
   const history = useHistory();
-  const updateCategory = entityUpdater<ICategoryForCreation>(
+  const updateCategory = getUpdateAction<ICategoryForCreation>(
     FB_COLLECTION_CATEGORY,
     () => {
       history.push("/home");
     }
   );
-  const deleteHandler = entityDeleter(FB_COLLECTION_CATEGORY);
+  const deleteHandler = getDeleteAction(FB_COLLECTION_CATEGORY);
 
   const deleteCategory = async (uid: string) => {
     await history.push("/");

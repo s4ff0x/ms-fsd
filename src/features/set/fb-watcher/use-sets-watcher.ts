@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { adaptEntityForUi } from "entities/entity-manager";
+import { adaptEntityForUi } from "entities/firebase-entity";
 import { runInAction } from "mobx";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { FB_COLLECTION_SET, setStore } from "entities/set";
