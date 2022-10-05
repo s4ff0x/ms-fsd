@@ -1,3 +1,3 @@
 export * from "./lib";
-export * from "./model/store";
+export * from "./model";
 export * from "./ui";

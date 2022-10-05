@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { IonButton, IonInput } from "@ionic/react";
+import { useState } from "react";
 import { useCreateCategory } from "../model";
 
 export const CreateCategory = () => {

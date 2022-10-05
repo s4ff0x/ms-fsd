@@ -7,8 +7,8 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import React from "react";
-import { SignInEmail } from "features/auth";
 import { Link } from "react-router-dom";
+import { SignInEmail } from "features/auth";
 
 export const SignInPage = () => {
   return (

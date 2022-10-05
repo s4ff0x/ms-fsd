@@ -1,10 +1,10 @@
-import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { initializeAuth, browserLocalPersistence } from "firebase/auth";
 import {
   getFirestore,
   enableMultiTabIndexedDbPersistence,
 } from "firebase/firestore";
-import { initializeAuth, browserLocalPersistence } from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,

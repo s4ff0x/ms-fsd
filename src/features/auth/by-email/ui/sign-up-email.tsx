@@ -1,6 +1,6 @@
 import { IonButton, IonInput, IonItem } from "@ionic/react";
-import { signUpEmailPass } from "../model";
 import { useRef } from "react";
+import { signUpEmailPass } from "../model";
 
 export const SignUpEmail = () => {
   const emailRef = useRef("");

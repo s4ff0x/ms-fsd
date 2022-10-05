@@ -1,7 +1,7 @@
+import { IonButton } from "@ionic/react";
 import { TermCardEditable } from "entities/set";
 import { ITermEditorProps } from "./lib";
 import { onAddTerm, onChange, onDelete } from "./model";
-import { IonButton } from "@ionic/react";
 
 export const TermEditor = ({ terms, setTerms }: ITermEditorProps) => {
   return (

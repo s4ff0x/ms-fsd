@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { IonButton, IonInput } from "@ionic/react";
+import { useState } from "react";
 import { useCreateSet } from "features/set/create-set";
-import { ITerm } from "entities/set";
 import { TermEditor } from "features/set/term-editor";
+import { ITerm } from "entities/set";
 
 export const CreateSetForm = () => {
   const [name, setName] = useState("");

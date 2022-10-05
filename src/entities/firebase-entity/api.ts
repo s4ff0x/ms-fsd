@@ -1,4 +1,3 @@
-import { db } from "shared/lib/firebase";
 import {
   collection,
   deleteDoc,
@@ -7,6 +6,7 @@ import {
   setDoc,
   updateDoc,
 } from "firebase/firestore";
+import { db } from "shared/lib/firebase";
 
 // FIXME: remove any
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router";
-import { Layout } from "shared/ui";
-import { categoryStore } from "entities/category";
 import { UpdateCategory } from "features/category/update-category";
+import { categoryStore } from "entities/category";
+import { Layout } from "shared/ui";
 
 export const UpdateCategoryPage = () => {
   const params = useParams<{ categoryId: string }>();
