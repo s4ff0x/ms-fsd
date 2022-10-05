@@ -1,7 +1,7 @@
-import { setStore } from "../model/store";
 import { observer } from "mobx-react-lite";
 import { useHistory } from "react-router";
 import { EMPTY_SET_LIST_TITLE, getSetRouteUpdateDynamic } from "../lib";
+import { setStore } from "../model";
 
 export const SetList = observer(() => {
   const history = useHistory();

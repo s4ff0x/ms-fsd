@@ -1,5 +1,5 @@
-import { ISet } from "../lib";
 import { makeAutoObservable } from "mobx";
+import { ISet } from "../lib";
 
 class SetStore {
   sets: ISet[] = [];

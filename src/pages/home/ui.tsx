@@ -2,13 +2,13 @@ import { IonItem } from "@ionic/react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { SignOut } from "features/auth";
+import { useCategoriesState } from "features/category/fb-watcher";
+import { useSetsState } from "features/set/fb-watcher";
+import { CategoryList } from "entities/category";
 import { getSetRouteCreate, SetList } from "entities/set";
 import { Layout } from "shared/ui";
-import { useSetsState } from "features/set/fb-watcher";
-import { useCategoriesState } from "features/category/fb-watcher";
-import { CategoryList } from "entities/category";
 
-const Home: React.FC = () => {
+export const Home: React.FC = () => {
   useSetsState();
   useCategoriesState();
   return (
@@ -26,5 +26,3 @@ const Home: React.FC = () => {
     </Layout>
   );
 };
-
-export default Home;

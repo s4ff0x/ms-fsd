@@ -18,15 +18,15 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "app/theme/variables.css";
+import { autorun, toJS } from "mobx";
 import { observer } from "mobx-react-lite";
 
+import Router from "app/router";
 import { useAuthWatcher } from "features/auth";
 
-import Router from "app/router";
-import { autorun, toJS } from "mobx";
-import { userStore } from "entities/user";
-import { setStore } from "entities/set";
 import { categoryStore } from "entities/category";
+import { setStore } from "entities/set";
+import { userStore } from "entities/user";
 
 setupIonicReact();
 

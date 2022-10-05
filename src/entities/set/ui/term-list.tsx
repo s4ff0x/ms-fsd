@@ -1,6 +1,6 @@
 import { ITerm } from "../lib";
-import { TermCard } from "../ui/term-card";
-import { TermCardEditable } from "../ui/term-card-editable";
+import { TermCard } from "./term-card";
+import { TermCardEditable } from "./term-card-editable";
 
 export const TermList = ({
   terms,

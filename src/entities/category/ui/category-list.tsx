@@ -1,10 +1,10 @@
-import { categoryStore } from "../model/store";
 import { observer } from "mobx-react-lite";
 import { useHistory } from "react-router";
 import {
   EMPTY_CATEGORY_LIST_TITLE,
   getCategoryUpdateRouteDynamic,
 } from "../lib";
+import { categoryStore } from "../model";
 
 export const CategoryList = observer(() => {
   const history = useHistory();

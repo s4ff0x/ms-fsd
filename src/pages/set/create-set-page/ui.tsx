@@ -1,6 +1,6 @@
 import React from "react";
-import { Layout } from "shared/ui";
 import { CreateSetForm } from "widgets/set/create-set-form";
+import { Layout } from "shared/ui";
 
 export const CreateSetPage = () => {
   return (
