@@ -1,5 +1,5 @@
 import { IonInput } from "@ionic/react";
-import { ITermEditable } from "../lib";
+import { ITermEditable } from "../";
 
 export const TermCardEditable = ({
   term,

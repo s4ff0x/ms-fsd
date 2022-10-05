@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import {
   EMPTY_CATEGORY_LIST_TITLE,
   getCategoryUpdateRouteDynamic,
-} from "../lib";
+} from "entities/category";
 import { categoryStore } from "../model";
 
 export const CategoryList = observer(() => {

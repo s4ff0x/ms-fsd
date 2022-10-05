@@ -1,4 +1,4 @@
-import { ITerm } from "../lib";
+import { ITerm } from "../";
 
 export const TermCard = ({ term, definition }: ITerm) => {
   return (

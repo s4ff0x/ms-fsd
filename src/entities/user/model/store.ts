@@ -1,5 +1,10 @@
 import { makeAutoObservable } from "mobx";
-import { IUser } from "../lib";
+
+export interface IUser {
+  uid: string;
+  displayName: string | null;
+  email: string | null;
+}
 
 class UserStore {
   currentUser: IUser | null = null;
