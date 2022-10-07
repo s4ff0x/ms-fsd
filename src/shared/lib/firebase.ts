@@ -7,12 +7,12 @@ import {
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  apiKey: "AIzaSyD4jWNP3XXngmWH39Lne2UFr3s5FQxYojc",
   authDomain: "ms-test-eac52.firebaseapp.com",
   projectId: "ms-test-eac52",
   storageBucket: "ms-test-eac52.appspot.com",
   messagingSenderId: "241030928655",
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  appId: "1:241030928655:web:aa9e8170b98956e012c67a",
   measurementId: "G-LT7CWJSCK8",
 };
 
