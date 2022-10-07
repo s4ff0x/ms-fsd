@@ -13,7 +13,7 @@ export const TitledBlock = ({
 }) => {
   return (
     <TitledBlockStyled>
-      <TextStyled size={"5"} boldness={"3"}>
+      <TextStyled size={"5"} boldness={"4"}>
         {title}
       </TextStyled>
       <TextStyled size={"5"} boldness={"1"} brightness={"1"}>

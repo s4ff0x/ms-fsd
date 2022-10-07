@@ -12,7 +12,7 @@ export type TextProps = {
 };
 
 const sizeMap = {
-  "1": "0.8rem",
+  "1": "0.9rem",
   "2": "1.125rem",
   "3": "1.25rem",
   "4": "1.6rem",

@@ -2,8 +2,8 @@ import { IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { observer } from "mobx-react-lite";
 import { Redirect, Route } from "react-router-dom";
-import { getSignInRoute, SignInPage } from "pages/auth/sign-in-page";
-import { getSignUpRoute, SignUpPage } from "pages/auth/sign-up-page";
+import { SignInPage } from "pages/auth/sign-in-page";
+import { SignUpPage } from "pages/auth/sign-up-page";
 import { CreateCategoryPage } from "pages/category/create-category-page";
 import { UpdateCategoryPage } from "pages/category/update-category-page";
 import { getHomeRoute } from "pages/home";
@@ -11,6 +11,7 @@ import { Home } from "pages/home";
 import { CreateSetPage } from "pages/set/create-set-page";
 import { UpdateSetPage } from "pages/set/update-set-page";
 import { getSignOutRoute } from "features/auth";
+import { getSignInRoute, getSignUpRoute } from "entities/auth";
 import {
   getCategoryCreateRoute,
   getCategoryUpdateRoute,
