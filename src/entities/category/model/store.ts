@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import { ICategory } from "./models";
+import { ICategory } from "./types";
 
 class CategoryStore {
   categories: ICategory[] = [];

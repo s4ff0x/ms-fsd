@@ -1,3 +1,3 @@
 export * from "./store";
-export * from "./models";
+export * from "./types";
 export * from "./use-category-watcher";

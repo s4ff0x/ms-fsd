@@ -15,7 +15,7 @@ export const SignInPage = () => {
   return (
     <Layout>
       <AuthFlexLayout>
-        <TitledBlock title={"Hey, you"} subTitle={"Ready for studying?"}>
+        <TitledBlock title={"Hey, you"} subTitle={"Just a few things..."}>
           {signInEmail}
         </TitledBlock>
         <AuthBottomBlockStyled>
