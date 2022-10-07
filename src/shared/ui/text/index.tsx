@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import styled, { css } from "styled-components";
-import { Level } from "../lib";
+import { Level } from "../../lib";
 
 export type TextProps = {
   children?: ReactNode;
