@@ -29,8 +29,8 @@ const boldnessMap = {
   "1": "400",
   "2": "500",
   "3": "600",
-  "4": "700",
-  "5": "900",
+  "4": "600",
+  "5": "700",
 };
 
 export const TextStyled = styled.div<TextProps>`

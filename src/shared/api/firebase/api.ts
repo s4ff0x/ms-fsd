@@ -6,7 +6,9 @@ import {
   setDoc,
   updateDoc,
 } from "firebase/firestore";
-import { db } from "shared/lib/firebase";
+import { auth, db } from "./config";
+
+export const getCurrentUserUID = () => auth.currentUser?.uid || "";
 
 // FIXME: remove any
 

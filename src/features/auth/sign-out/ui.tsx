@@ -1,7 +1,7 @@
-import { IonButton } from "@ionic/react";
+import { ButtonStyled } from "shared";
 import { useSignOut } from "./model";
 
 export const SignOut = () => {
   const { signOut } = useSignOut();
-  return <IonButton onClick={signOut}>Sign out</IonButton>;
+  return <ButtonStyled onClick={signOut}>Sign out</ButtonStyled>;
 };

@@ -22,6 +22,7 @@ export const useSignUpEmail = () => {
         <Input
           inputProps={{
             placeholder: "password",
+            type: "password",
             onIonChange: (e: CustomEvent) => (passRef.current = e.detail.value),
           }}
         >

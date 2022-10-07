@@ -1,8 +1,9 @@
-import { IonButton, IonInput } from "@ionic/react";
+import { IonInput } from "@ionic/react";
 import { useState } from "react";
 import { useCreateSet } from "features/set/create-set";
 import { TermEditor } from "features/set/term-editor";
 import { ITerm } from "entities/set";
+import { ButtonStyled } from "shared";
 
 export const CreateSetForm = () => {
   const [name, setName] = useState("");
@@ -19,9 +20,9 @@ export const CreateSetForm = () => {
       />
       <h3>terms</h3>
       <TermEditor terms={terms} setTerms={setTerms} />
-      <IonButton onClick={() => createSet({ name, terms })}>
+      <ButtonStyled onClick={() => createSet({ name, terms })}>
         Create set
-      </IonButton>
+      </ButtonStyled>
     </div>
   );
 };

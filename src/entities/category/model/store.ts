@@ -1,17 +1,5 @@
 import { makeAutoObservable } from "mobx";
-
-export interface ICategory {
-  uid: string;
-  name: string;
-  setIds: string[];
-  createdAt: number;
-  updatedAt: number;
-}
-
-export interface ICategoryForCreation {
-  name: string;
-  setIds: string[];
-}
+import { ICategory } from "./models";
 
 class CategoryStore {
   categories: ICategory[] = [];

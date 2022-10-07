@@ -1,5 +1,5 @@
-import { IonButton } from "@ionic/react";
 import { TermCardEditable } from "entities/set";
+import { ButtonStyled } from "shared";
 import { ITermEditorProps } from "./lib";
 import { onAddTerm, onChange, onDelete } from "./model";
 
@@ -16,7 +16,9 @@ export const TermEditor = ({ terms, setTerms }: ITermEditorProps) => {
           onDelete={() => onDelete(terms, setTerms, el.uid)}
         />
       ))}
-      <IonButton onClick={() => onAddTerm(terms, setTerms)}>Add term</IonButton>
+      <ButtonStyled onClick={() => onAddTerm(terms, setTerms)}>
+        Add term
+      </ButtonStyled>
     </div>
   );
 };

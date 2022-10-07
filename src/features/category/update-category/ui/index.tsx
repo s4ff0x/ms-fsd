@@ -1,6 +1,7 @@
-import { IonButton, IonInput } from "@ionic/react";
+import { IonInput } from "@ionic/react";
 import { useState } from "react";
 import { ICategory } from "entities/category";
+import { ButtonStyled } from "shared";
 import { useUpdateCategory } from "../model";
 
 export const UpdateCategory = ({ category }: { category: ICategory }) => {
@@ -14,14 +15,14 @@ export const UpdateCategory = ({ category }: { category: ICategory }) => {
         placeholder={"name"}
         onIonChange={(e: CustomEvent) => setName(e.detail.value)}
       />
-      <IonButton
+      <ButtonStyled
         onClick={() => updateCategory({ name, setIds: [] }, category.uid)}
       >
         Update category
-      </IonButton>
-      <IonButton onClick={() => deleteCategory(category.uid)}>
+      </ButtonStyled>
+      <ButtonStyled onClick={() => deleteCategory(category.uid)}>
         Delete category
-      </IonButton>
+      </ButtonStyled>
     </div>
   );
 };

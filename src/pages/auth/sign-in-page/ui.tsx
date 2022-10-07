@@ -5,8 +5,8 @@ import {
   AuthBottomBlockStyled,
   AuthFlexLayout,
   AuthNavBlock,
-  getSignUpRoute,
 } from "entities/auth";
+import { getSignUpRoute } from "entities/router";
 import { ButtonStyled, Layout, TitledBlock } from "shared";
 
 export const SignInPage = () => {

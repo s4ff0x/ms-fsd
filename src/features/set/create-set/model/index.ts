@@ -1,7 +1,10 @@
 import { useHistory } from "react-router";
-import { getCreateAction } from "entities/firebase-entity";
-import { FB_COLLECTION_SET, ISetForCreation } from "entities/set";
-import { getCurrentUserUID } from "entities/user";
+import { ISetForCreation } from "entities/set";
+import {
+  FB_COLLECTION_SET,
+  getCreateAction,
+  getCurrentUserUID,
+} from "shared/api";
 
 export const useCreateSet = () => {
   const history = useHistory();

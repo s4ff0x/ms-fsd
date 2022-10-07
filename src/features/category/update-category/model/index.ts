@@ -1,9 +1,10 @@
 import { useHistory } from "react-router";
+import { ICategoryForCreation } from "entities/category";
 import {
-  ICategoryForCreation,
   FB_COLLECTION_CATEGORY,
-} from "entities/category";
-import { getDeleteAction, getUpdateAction } from "entities/firebase-entity";
+  getDeleteAction,
+  getUpdateAction,
+} from "shared/api";
 
 export const useUpdateCategory = () => {
   const history = useHistory();

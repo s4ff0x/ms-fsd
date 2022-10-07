@@ -1,5 +1,6 @@
-import { IonButton, IonInput } from "@ionic/react";
+import { IonInput } from "@ionic/react";
 import { useState } from "react";
+import { ButtonStyled } from "shared";
 import { useCreateCategory } from "../model";
 
 export const CreateCategory = () => {
@@ -13,9 +14,9 @@ export const CreateCategory = () => {
         placeholder={"name"}
         onIonChange={(e: CustomEvent) => setName(e.detail.value)}
       />
-      <IonButton onClick={() => createCategory({ name, setIds: [] })}>
+      <ButtonStyled onClick={() => createCategory({ name, setIds: [] })}>
         Create category
-      </IonButton>
+      </ButtonStyled>
     </div>
   );
 };

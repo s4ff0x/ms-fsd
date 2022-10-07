@@ -1,4 +1,4 @@
-import { getNewTerm, ITerm } from "entities/set";
+import { ITerm, getNewTerm } from "entities/set";
 
 export const onChange = (
   terms: ITerm[],

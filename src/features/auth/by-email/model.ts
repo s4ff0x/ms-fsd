@@ -4,7 +4,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { IUser } from "entities/user";
-import { auth } from "shared";
+import { auth } from "shared/api";
 
 export const signInEmailPass = async (email: string, password: string) => {
   const {
