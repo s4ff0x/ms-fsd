@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { userStore } from "entities/user";
 import { auth, onAuthStateChanged, User } from "shared/api";
+import { userStore } from "./store";
 
-export const useAuthWatcher = () => {
+export const useUserWatcher = () => {
   useEffect(() => {
     onAuthStateChanged(
       auth,

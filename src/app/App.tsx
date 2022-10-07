@@ -23,11 +23,10 @@ import { autorun, toJS } from "mobx";
 import { observer } from "mobx-react-lite";
 
 import Router from "app/router";
-import { useAuthWatcher } from "features/auth";
 
 import { categoryStore } from "entities/category";
 import { setStore } from "entities/set";
-import { userStore } from "entities/user";
+import { userStore, useUserWatcher } from "entities/user";
 
 setupIonicReact();
 
@@ -43,7 +42,7 @@ autorun(() => {
 });
 
 const App: React.FC = observer(() => {
-  useAuthWatcher();
+  useUserWatcher();
 
   return (
     <IonApp>

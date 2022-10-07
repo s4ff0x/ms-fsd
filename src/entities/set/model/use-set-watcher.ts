@@ -1,22 +1,21 @@
 import { runInAction } from "mobx";
 import { useEffect } from "react";
-
-import { categoryStore } from "entities/category";
 import {
   adaptEntityForUi,
-  auth,
   collection,
   db,
-  FB_COLLECTION_CATEGORY,
+  FB_COLLECTION_SET,
+  getCurrentUserUID,
   onSnapshot,
   query,
   where,
 } from "shared/api";
+import { setStore } from "./store";
 
-export const useCategoriesState = () => {
+export const useSetWatcher = () => {
   useEffect(() => {
-    const ref = collection(db, FB_COLLECTION_CATEGORY);
-    const q = query(ref, where("userId", "==", auth.currentUser?.uid));
+    const ref = collection(db, FB_COLLECTION_SET);
+    const q = query(ref, where("userId", "==", getCurrentUserUID()));
     const unsubscribe = onSnapshot(q, async (snapshot) => {
       let result: any[] = []; // TODO: remove any
 
@@ -25,7 +24,7 @@ export const useCategoriesState = () => {
       });
 
       runInAction(() => {
-        categoryStore.categories = result;
+        setStore.sets = result;
       });
     });
     return () => unsubscribe();
