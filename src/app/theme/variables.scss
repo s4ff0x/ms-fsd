@@ -1,11 +1,29 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
-/** Ionic CSS Variables **/
+/** App CSS Variables **/
 :root {
   --buttonGradient: linear-gradient(98.17deg, #0EA56E 4.77%, #68FCC7 92.17%);
   --borderRadiusButton: 3.125rem;
   --dark: #181818;
+
+  --white1: rgba(255, 255, 255, 0.01);
+  --white3: rgba(255, 255, 255, 0.03);
+  --white5: rgba(255, 255, 255, 0.05);
+  --white10: rgba(255, 255, 255, 0.1);
+  --white20: rgba(255, 255, 255, 0.2);
+  --white30: rgba(255, 255, 255, 0.3);
+  --white60: rgba(255, 255, 255, 0.6);
+  --white80: rgba(255, 255, 255, 0.8);
+  --white100: rgba(255, 255, 255, 1);
+
+  --gradient-1: linear-gradient(180deg, #181818 0%, #030303 100%);
+  --gradient-2: linear-gradient(180deg, rgba(40, 40, 40, 0.5) 0%, rgba(20, 20, 20, 0.5) 100%);
+  --gradient-3: linear-gradient(161.31deg, rgba(52, 52, 52, 0.6) 0%, rgba(47, 47, 47, 0) 112.41%);
+}
+
+/** Ionic CSS Variables **/
+:root {
 
   /** primary **/
   --ion-color-primary: #3880ff;

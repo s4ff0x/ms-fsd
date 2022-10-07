@@ -1,29 +1,18 @@
-import {
-  IonContent,
-  IonHeader,
-  IonItem,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/react";
 import React from "react";
-import { Link } from "react-router-dom";
-import { SignInEmail } from "features/auth";
+import { useSignInEmail } from "features/auth";
+import { AuthFlexLayout } from "entities/auth";
+import { ButtonStyled, Layout, TitledBlock } from "shared";
 
 export const SignInPage = () => {
+  const { signInEmail, signInEmailHandler } = useSignInEmail();
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Blank</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonItem>
-          <Link to="/sign-up">Sign up</Link>
-        </IonItem>
-        <SignInEmail />
-      </IonContent>
-    </IonPage>
+    <Layout>
+      <AuthFlexLayout>
+        <TitledBlock title={"Hey, you"} subTitle={"Ready for studying?"}>
+          {signInEmail}
+        </TitledBlock>
+        <ButtonStyled onClick={signInEmailHandler}>Sign in</ButtonStyled>
+      </AuthFlexLayout>
+    </Layout>
   );
 };

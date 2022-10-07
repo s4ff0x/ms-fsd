@@ -22,7 +22,7 @@ export const ButtonStyled = styled(IonButton)<ButtonProps>`
   height: 3.3rem;
   font-size: 1rem;
   display: inline-flex;
-  font-weight: 600;
+  font-weight: 700;
   align-items: center;
   justify-content: center;
   letter-spacing: normal;

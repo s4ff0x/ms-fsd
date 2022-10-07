@@ -17,7 +17,8 @@ import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
 
 /* Theme variables */
-import "app/theme/variables.css";
+import "app/theme/global.scss";
+
 import { autorun, toJS } from "mobx";
 import { observer } from "mobx-react-lite";
 

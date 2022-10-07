@@ -1,13 +1,13 @@
 import {
   IonBackButton,
   IonButtons,
-  IonContent,
   IonHeader,
   IonPage,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
 import React, { ReactNode } from "react";
+import { LayoutContentStyled } from "./layout.styles";
 
 export const Layout = ({
   children,
@@ -15,24 +15,24 @@ export const Layout = ({
   withBackButton = false,
 }: {
   children: ReactNode;
-  title: string;
+  title?: string;
   withBackButton?: boolean;
 }) => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>{title}</IonTitle>
-          {withBackButton && (
-            <IonButtons slot="start">
-              <IonBackButton defaultHref="/home" text={"Back"} />
-            </IonButtons>
-          )}
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <div style={{ padding: 20 }}>{children}</div>
-      </IonContent>
+      {title && (
+        <IonHeader>
+          <IonToolbar>
+            <IonTitle>{title}</IonTitle>
+            {withBackButton && (
+              <IonButtons slot="start">
+                <IonBackButton text={"Back"} />
+              </IonButtons>
+            )}
+          </IonToolbar>
+        </IonHeader>
+      )}
+      <LayoutContentStyled fullscreen>{children}</LayoutContentStyled>
     </IonPage>
   );
 };

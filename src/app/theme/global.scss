@@ -1,0 +1,28 @@
+@import './variables.scss';
+
+html {
+  --ion-font-family: 'Poppins', sans-serif;
+  color: white;
+}
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+ion-item {
+  --background: none;
+  --border-color: transparent;
+}
+ion-list {
+  background: var(--gradient-1);
+}
+ion-item-divider {
+  --background: none;
+}
+ion-toggle {
+  --background-checked: var(--accent);
+}
+ion-action-sheet.action-sheet {
+  --button-color: white;
+}
+
