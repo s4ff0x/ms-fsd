@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { action, computed, makeAutoObservable } from "mobx";
 import { IUser } from "./types";
 
 class UserStore {
@@ -9,14 +9,19 @@ class UserStore {
     makeAutoObservable(this);
   }
 
-  updateUser(user: IUser | null) {
+  @action updateUser(user: IUser | null) {
     this.currentUser = user;
   }
-  updateLoading(loading: boolean) {
+  @action updateLoading(loading: boolean) {
     this.loading = loading;
   }
-  shouldShowUserContent = () => !userStore.loading && !!userStore.currentUser;
-  shouldShowAuth = () => !this.shouldShowUserContent() && !userStore.loading;
+  @computed get shouldShowUserContent() {
+    return !userStore.loading && !!userStore.currentUser;
+  }
+
+  @computed get shouldShowAuth() {
+    return !this.shouldShowUserContent && !userStore.loading;
+  }
 }
 
 export const userStore = new UserStore();

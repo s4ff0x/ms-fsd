@@ -26,11 +26,11 @@ import Router from "app/router";
 import { categoryStore } from "entities/category";
 import { setStore } from "entities/set";
 import { userStore, useUserWatcher } from "entities/user";
-import { initLogger } from "shared/lib";
+import { initStoreLogger } from "shared/lib";
 
 setupIonicReact();
 
-initLogger([
+initStoreLogger([
   { label: "UserStore", data: userStore },
   { label: "SetStore", data: setStore },
   { label: "CategoryStore", data: categoryStore },

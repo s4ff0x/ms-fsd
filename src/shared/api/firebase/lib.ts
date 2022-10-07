@@ -12,8 +12,6 @@ export { collection, onSnapshot, query, where } from "firebase/firestore";
 
 export const getCurrentUserUID = () => auth.currentUser?.uid || "";
 
-// FIXME: remove any
-
 export const adaptEntityForUi = (doc: any) => {
   return {
     ...doc.data(),

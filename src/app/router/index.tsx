@@ -22,7 +22,7 @@ import { userStore } from "entities/user";
 export default observer(() => {
   return (
     <IonReactRouter>
-      {userStore.shouldShowUserContent() && (
+      {userStore.shouldShowUserContent && (
         <IonRouterOutlet>
           {/* Home */}
           <Route exact path={getHomeRoute()}>
@@ -51,7 +51,7 @@ export default observer(() => {
           </Route>
         </IonRouterOutlet>
       )}
-      {userStore.shouldShowAuth() && (
+      {userStore.shouldShowAuth && (
         <IonRouterOutlet>
           <Route exact path={getSignInRoute()}>
             <SignInPage />

@@ -5,7 +5,7 @@ interface ILoggerItem {
   data: any;
 }
 
-export const initLogger = (items: ILoggerItem[]) => {
+export const initStoreLogger = (items: ILoggerItem[]) => {
   if (process.env.NODE_ENV === "development")
     autorun(() => {
       items.forEach((item) => {

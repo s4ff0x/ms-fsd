@@ -1,4 +1,3 @@
-import { runInAction } from "mobx";
 import { useEffect } from "react";
 
 import { categoryStore } from "entities/category/index";
@@ -24,9 +23,7 @@ export const useCategoryWatcher = () => {
         result.push(adaptEntityForUi(doc));
       });
 
-      runInAction(() => {
-        categoryStore.categories = result;
-      });
+      categoryStore.update(result);
     });
     return () => unsubscribe();
   }, []);

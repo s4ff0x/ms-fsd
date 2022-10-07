@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { action, makeAutoObservable } from "mobx";
 import { ISet } from "./types";
 
 class SetStore {
@@ -8,7 +8,7 @@ class SetStore {
     makeAutoObservable(this);
   }
 
-  update(sets: ISet[]) {
+  @action update(sets: ISet[]) {
     this.sets = sets;
   }
 }

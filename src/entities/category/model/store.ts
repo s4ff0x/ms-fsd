@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { action, makeAutoObservable } from "mobx";
 import { ICategory } from "./types";
 
 class CategoryStore {
@@ -8,7 +8,7 @@ class CategoryStore {
     makeAutoObservable(this);
   }
 
-  update(categories: ICategory[]) {
+  @action update(categories: ICategory[]) {
     this.categories = categories;
   }
 }

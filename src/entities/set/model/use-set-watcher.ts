@@ -1,4 +1,3 @@
-import { runInAction } from "mobx";
 import { useEffect } from "react";
 import {
   adaptEntityForUi,
@@ -23,9 +22,7 @@ export const useSetWatcher = () => {
         result.push(adaptEntityForUi(doc));
       });
 
-      runInAction(() => {
-        setStore.sets = result;
-      });
+      setStore.update(result);
     });
     return () => unsubscribe();
   }, []);
