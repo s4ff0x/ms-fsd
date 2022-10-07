@@ -24,11 +24,12 @@ export default observer(() => {
     <IonReactRouter>
       {userStore.shouldShowUserContent() && (
         <IonRouterOutlet>
+          {/* Home */}
           <Route exact path={getHomeRoute()}>
             <Home />
           </Route>
 
-          {/*Set*/}
+          {/* Set */}
           <Route exact path={getSetRouteCreate()}>
             <CreateSetPage />
           </Route>
@@ -36,7 +37,7 @@ export default observer(() => {
             <UpdateSetPage />
           </Route>
 
-          {/*Category*/}
+          {/* Category */}
           <Route exact path={getCategoryCreateRoute()}>
             <CreateCategoryPage />
           </Route>
@@ -44,6 +45,7 @@ export default observer(() => {
             <UpdateCategoryPage />
           </Route>
 
+          {/* Redirect */}
           <Route exact path={["/", getSignInRoute(), getSignOutRoute()]}>
             <Redirect to={getHomeRoute()} />
           </Route>

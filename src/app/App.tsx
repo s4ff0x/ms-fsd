@@ -19,7 +19,6 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "app/theme/global.scss";
 
-import { autorun, toJS } from "mobx";
 import { observer } from "mobx-react-lite";
 
 import Router from "app/router";
@@ -27,19 +26,15 @@ import Router from "app/router";
 import { categoryStore } from "entities/category";
 import { setStore } from "entities/set";
 import { userStore, useUserWatcher } from "entities/user";
+import { initLogger } from "shared/lib";
 
 setupIonicReact();
 
-autorun(() => {
-  console.log(
-    "\n UserStore:",
-    toJS(userStore),
-    "\n SetStore:",
-    toJS(setStore),
-    "\n CategoryStore:",
-    toJS(categoryStore)
-  );
-});
+initLogger([
+  { label: "UserStore", data: userStore },
+  { label: "SetStore", data: setStore },
+  { label: "CategoryStore", data: categoryStore },
+]);
 
 const App: React.FC = observer(() => {
   useUserWatcher();
