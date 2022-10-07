@@ -1,10 +1,10 @@
+import { IUser } from "entities/user";
 import {
+  auth,
   createUserWithEmailAndPassword,
   sendEmailVerification,
   signInWithEmailAndPassword,
-} from "firebase/auth";
-import { IUser } from "entities/user";
-import { auth } from "shared/api";
+} from "shared/api";
 
 export const signInEmailPass = async (email: string, password: string) => {
   const {

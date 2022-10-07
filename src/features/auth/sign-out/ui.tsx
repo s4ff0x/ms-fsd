@@ -1,4 +1,4 @@
-import { ButtonStyled } from "shared";
+import { ButtonStyled } from "shared/ui";
 import { useSignOut } from "./model";
 
 export const SignOut = () => {

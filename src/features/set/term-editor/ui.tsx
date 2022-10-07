@@ -1,5 +1,5 @@
 import { TermCardEditable } from "entities/set";
-import { ButtonStyled } from "shared";
+import { ButtonStyled } from "shared/ui";
 import { ITermEditorProps } from "./lib";
 import { onAddTerm, onChange, onDelete } from "./model";
 

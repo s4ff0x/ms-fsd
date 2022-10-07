@@ -1,4 +1,4 @@
-import { uid } from "shared";
+import { uid } from "shared/lib";
 
 export const getNewTerm = () => ({
   term: "",

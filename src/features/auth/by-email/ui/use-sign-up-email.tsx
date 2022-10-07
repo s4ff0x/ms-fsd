@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Input } from "shared";
+import { Input } from "shared/ui";
 import { signUpEmailPass } from "../model";
 
 export const useSignUpEmail = () => {

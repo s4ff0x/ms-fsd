@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ButtonStyled, TextStyled } from "shared";
+import { ButtonStyled, TextStyled } from "shared/ui";
 
 export const AuthFlexLayoutStyled = styled.div`
   display: flex;

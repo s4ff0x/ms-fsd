@@ -1,5 +1,5 @@
 import React from "react";
-import { TextStyled } from "shared";
+import { TextStyled } from "shared/ui";
 import { AuthNavBlockStyled } from "./styles";
 
 export const AuthNavBlock = ({

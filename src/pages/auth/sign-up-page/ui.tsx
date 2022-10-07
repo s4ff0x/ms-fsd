@@ -7,7 +7,7 @@ import {
   AuthNavBlock,
 } from "entities/auth";
 import { getSignInRoute } from "entities/router";
-import { ButtonStyled, Layout, TitledBlock } from "shared";
+import { ButtonStyled, Layout, TitledBlock } from "shared/ui";
 
 export const SignUpPage = () => {
   const { signUpEmail, signUpEmailHandler } = useSignUpEmail();

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useCreateSet } from "features/set/create-set";
 import { TermEditor } from "features/set/term-editor";
 import { ITerm } from "entities/set";
-import { ButtonStyled } from "shared";
+import { ButtonStyled } from "shared/ui";
 
 export const CreateSetForm = () => {
   const [name, setName] = useState("");

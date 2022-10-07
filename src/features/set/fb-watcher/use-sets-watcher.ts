@@ -1,8 +1,16 @@
-import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { runInAction } from "mobx";
 import { useEffect } from "react";
 import { setStore } from "entities/set";
-import { adaptEntityForUi, auth, db, FB_COLLECTION_SET } from "shared/api";
+import {
+  adaptEntityForUi,
+  auth,
+  collection,
+  db,
+  FB_COLLECTION_SET,
+  onSnapshot,
+  query,
+  where,
+} from "shared/api";
 
 export const useSetsState = () => {
   useEffect(() => {

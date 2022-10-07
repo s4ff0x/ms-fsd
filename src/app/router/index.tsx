@@ -9,7 +9,6 @@ import { UpdateCategoryPage } from "pages/category/update-category-page";
 import { Home } from "pages/home";
 import { CreateSetPage } from "pages/set/create-set-page";
 import { UpdateSetPage } from "pages/set/update-set-page";
-import { getSignOutRoute } from "features/auth";
 
 import {
   getCategoryCreateRoute,
@@ -18,6 +17,7 @@ import {
   getSetRouteCreate,
   getSetRouteUpdate,
   getSignInRoute,
+  getSignOutRoute,
   getSignUpRoute,
 } from "entities/router";
 import { userStore } from "entities/user";

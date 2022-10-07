@@ -1,5 +1,5 @@
-import React, {ReactNode} from "react";
-import {TextStyled} from "shared";
+import React, { ReactNode } from "react";
+import { TextStyled } from "shared/ui";
 import { AuthFlexLayoutStyled } from "./styles";
 
 export const AuthFlexLayout = ({ children }: { children: ReactNode }) => {

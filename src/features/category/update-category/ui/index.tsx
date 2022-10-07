@@ -1,7 +1,7 @@
 import { IonInput } from "@ionic/react";
 import { useState } from "react";
 import { ICategory } from "entities/category";
-import { ButtonStyled } from "shared";
+import { ButtonStyled } from "shared/ui";
 import { useUpdateCategory } from "../model";
 
 export const UpdateCategory = ({ category }: { category: ICategory }) => {

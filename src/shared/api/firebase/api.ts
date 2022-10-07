@@ -7,6 +7,8 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { auth, db } from "./config";
+export * from "firebase/auth";
+export { collection, onSnapshot, query, where } from "firebase/firestore";
 
 export const getCurrentUserUID = () => auth.currentUser?.uid || "";
 
@@ -27,18 +29,18 @@ export const adaptEntityForServer = (entity: any) => {
 };
 
 export const getCreateAction =
-  <T>(col: string, currentUserUID: string, callback?: () => void) =>
+  <T>(col: string, callback: () => void = () => {}) =>
   async (data: T) => {
     const newEntity = doc(collection(db, col));
 
     await setDoc(newEntity, {
       ...data,
-      userId: currentUserUID,
+      userId: getCurrentUserUID(),
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     });
 
-    callback && callback();
+    callback();
   };
 
 export const getUpdateAction =

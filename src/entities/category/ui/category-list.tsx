@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { EMPTY_CATEGORY_LIST_TITLE } from "entities/category";
+import { EMPTY_CATEGORY_LIST_TITLE } from "../config";
 import { categoryStore } from "../model";
 
 export const CategoryList = observer(
