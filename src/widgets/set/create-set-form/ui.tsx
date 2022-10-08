@@ -7,7 +7,14 @@ import { ButtonStyled, Input } from "shared/ui";
 export const CreateSetForm = () => {
   const [name, setName] = useState("");
   const [terms, setTerms] = useState<ITerm[]>([]);
-  const createSet = useCreateSet();
+
+  const resetForm = () => {
+    setName("");
+    setTerms([]);
+  };
+
+  const createSet = useCreateSet(resetForm);
+
   return (
     <div>
       <Input

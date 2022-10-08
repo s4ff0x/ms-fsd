@@ -6,7 +6,11 @@ import { useUpdateCategory } from "../model";
 
 export const UpdateCategory = ({ category }: { category: ICategory }) => {
   const [name, setName] = useState(category.name);
-  const { updateCategory, deleteCategory } = useUpdateCategory();
+  const resetForm = () => {
+    setName("");
+  };
+
+  const { updateCategory, deleteCategory } = useUpdateCategory(resetForm);
   return (
     <div>
       <IonInput

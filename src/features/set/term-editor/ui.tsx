@@ -1,11 +1,23 @@
+import { useCallback } from "react";
+import styled from "styled-components";
 import { TermCardEditable, TermList } from "entities/set";
 import { ButtonStyled } from "shared/ui";
 import { ITermEditorProps } from "./lib";
 import { onAddTerm, onChange, onDelete } from "./model";
 
+export const TermEditorStyled = styled.div`
+  > ${ButtonStyled} {
+    margin-top: 1rem;
+  }
+`;
+
 export const TermEditor = ({ terms, setTerms }: ITermEditorProps) => {
+  const onAddTermHandler = useCallback(() => {
+    onAddTerm(terms, setTerms);
+  }, [setTerms, terms]);
+
   return (
-    <div>
+    <TermEditorStyled>
       <TermList>
         {terms.map((el) => (
           <TermCardEditable
@@ -18,9 +30,9 @@ export const TermEditor = ({ terms, setTerms }: ITermEditorProps) => {
           />
         ))}
       </TermList>
-      <ButtonStyled onClick={() => onAddTerm(terms, setTerms)}>
+      <ButtonStyled onClick={onAddTermHandler} small square outline>
         Add term
       </ButtonStyled>
-    </div>
+    </TermEditorStyled>
   );
 };

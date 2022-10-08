@@ -5,7 +5,12 @@ import { useCreateCategory } from "../model";
 
 export const CreateCategory = () => {
   const [name, setName] = useState("");
-  const createCategory = useCreateCategory();
+
+  const resetForm = () => {
+    setName("");
+  };
+
+  const createCategory = useCreateCategory(resetForm);
   return (
     <div>
       <IonInput

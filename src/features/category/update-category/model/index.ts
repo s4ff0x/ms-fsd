@@ -6,15 +6,16 @@ import {
   getUpdateAction,
 } from "shared/api";
 
-export const useUpdateCategory = () => {
+export const useUpdateCategory = (cb: () => void = () => {}) => {
   const history = useHistory();
   const updateCategory = getUpdateAction<ICategoryForCreation>(
     FB_COLLECTION_CATEGORY,
     () => {
       history.push("/home");
+      cb();
     }
   );
-  const deleteHandler = getDeleteAction(FB_COLLECTION_CATEGORY);
+  const deleteHandler = getDeleteAction(FB_COLLECTION_CATEGORY, cb);
 
   const deleteCategory = async (uid: string) => {
     await history.push("/");
