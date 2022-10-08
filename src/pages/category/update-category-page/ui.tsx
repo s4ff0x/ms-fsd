@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router";
-import { UpdateCategory } from "features/category/update-category";
+import { CategoryForm } from "widgets/category-form";
 import { categoryStore } from "entities/category";
 import { Layout } from "shared/ui";
 
@@ -13,7 +13,7 @@ export const UpdateCategoryPage = () => {
   if (!category) return null;
   return (
     <Layout title={"Update Category"} withBackButton>
-      <UpdateCategory category={category} />
+      <CategoryForm category={category} />
     </Layout>
   );
 };

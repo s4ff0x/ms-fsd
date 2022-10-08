@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router";
-import { UpdateSetForm } from "widgets/set/update-set-form";
+import { SetForm } from "widgets/set-form";
 import { setStore } from "entities/set";
 import { Layout, TitledBlock } from "shared/ui";
 
@@ -12,7 +12,7 @@ export const UpdateSetPage = () => {
   return (
     <Layout title={"Update set"} withBackButton>
       <TitledBlock title={"Update set"} subTitle={"With new terms"} />
-      <UpdateSetForm set={set} />
+      <SetForm set={set} />
     </Layout>
   );
 };
