@@ -9,7 +9,7 @@ export const TitledBlock = ({
 }: {
   title: string;
   subTitle: string;
-  children: ReactNode;
+  children?: ReactNode;
 }) => {
   return (
     <TitledBlockStyled>
