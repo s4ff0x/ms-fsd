@@ -23,18 +23,12 @@ import { observer } from "mobx-react-lite";
 
 import Router from "app/router";
 
-import { categoryStore } from "entities/category";
-import { setStore } from "entities/set";
-import { userStore, useUserWatcher } from "entities/user";
+import { useUserWatcher } from "entities/user";
 import { initStoreLogger } from "shared/lib";
 
 setupIonicReact();
 
-initStoreLogger([
-  { label: "UserStore", data: userStore },
-  { label: "SetStore", data: setStore },
-  { label: "CategoryStore", data: categoryStore },
-]);
+initStoreLogger();
 
 const App: React.FC = observer(() => {
   useUserWatcher();

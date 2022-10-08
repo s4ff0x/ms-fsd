@@ -18,7 +18,6 @@ class UserStore {
   @computed get shouldShowUserContent() {
     return !userStore.loading && !!userStore.currentUser;
   }
-
   @computed get shouldShowAuth() {
     return !this.shouldShowUserContent && !userStore.loading;
   }

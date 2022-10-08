@@ -1,15 +1,15 @@
-import { autorun, toJS } from "mobx";
+import { spy, toJS } from "mobx";
 
-interface ILoggerItem {
-  label: string;
-  data: any;
-}
-
-export const initStoreLogger = (items: ILoggerItem[]) => {
-  if (process.env.NODE_ENV === "development")
-    autorun(() => {
-      items.forEach((item) => {
-        console.log(`\n ${item.label}:`, toJS(item.data));
-      });
+export const initStoreLogger = () => {
+  if (process.env.NODE_ENV === "development") {
+    spy((event) => {
+      if (event.type === "action") {
+        console.log(
+          `${toJS(event.name)} with args:`,
+          toJS(event.arguments),
+          toJS(event.object)
+        );
+      }
     });
+  }
 };
