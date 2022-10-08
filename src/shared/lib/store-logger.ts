@@ -5,7 +5,8 @@ export const initStoreLogger = () => {
     spy((event) => {
       if (event.type === "action") {
         console.log(
-          `${toJS(event.name)} with args:`,
+          `%c${toJS(event.name)}:`,
+          "color: #fc9403; font-family:sans-serif; font-weight: bold;",
           toJS(event.arguments),
           toJS(event.object)
         );
