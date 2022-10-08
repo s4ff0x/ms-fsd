@@ -8,7 +8,7 @@ class SetStore {
     makeAutoObservable(this);
   }
 
-  @action update(sets: ISet[]) {
+  @action updateSets(sets: ISet[]) {
     this.sets = sets;
   }
 }

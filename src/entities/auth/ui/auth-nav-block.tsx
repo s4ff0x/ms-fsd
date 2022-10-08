@@ -1,22 +1,22 @@
 import React from "react";
-import { TextStyled } from "shared/ui";
+import { LinkStyled, TextStyled } from "shared/ui";
 import { AuthNavBlockStyled } from "./styles";
 
 export const AuthNavBlock = ({
   text,
   linkText,
-  linkHandler,
+  linkRoute,
 }: {
   text: string;
   linkText: string;
-  linkHandler: () => void;
+  linkRoute: string;
 }) => {
   return (
     <AuthNavBlockStyled>
       <TextStyled brightness={"3"}>{text}</TextStyled>
-      <TextStyled boldness={"3"} onClick={linkHandler}>
-        {linkText}
-      </TextStyled>
+      <LinkStyled to={linkRoute}>
+        <TextStyled boldness={"3"}>{linkText}</TextStyled>
+      </LinkStyled>
     </AuthNavBlockStyled>
   );
 };

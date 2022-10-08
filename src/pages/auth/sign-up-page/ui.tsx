@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router";
 import { useSignUpEmail } from "features/auth";
 import {
   AuthBottomBlockStyled,
@@ -11,7 +10,6 @@ import { ButtonStyled, Layout, TitledBlock } from "shared/ui";
 
 export const SignUpPage = () => {
   const { signUpEmail, signUpEmailHandler } = useSignUpEmail();
-  const history = useHistory();
   return (
     <Layout>
       <AuthFlexLayout>
@@ -26,7 +24,7 @@ export const SignUpPage = () => {
           <AuthNavBlock
             text={"Already have an account?"}
             linkText={"Sign in"}
-            linkHandler={() => history.push(getSignInRoute())}
+            linkRoute={getSignInRoute()}
           />
         </AuthBottomBlockStyled>
       </AuthFlexLayout>

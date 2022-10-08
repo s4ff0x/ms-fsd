@@ -4,10 +4,9 @@ import {
   IonHeader,
   IonPage,
   IonTitle,
-  IonToolbar,
 } from "@ionic/react";
 import React, { ReactNode } from "react";
-import { LayoutContentStyled } from "./layout.styles";
+import { LayoutContentStyled, LayoutToolbarStyled } from "./layout.styles";
 
 export const Layout = ({
   children,
@@ -22,14 +21,14 @@ export const Layout = ({
     <IonPage>
       {title && (
         <IonHeader>
-          <IonToolbar>
+          <LayoutToolbarStyled>
             <IonTitle>{title}</IonTitle>
             {withBackButton && (
               <IonButtons slot="start">
                 <IonBackButton text={"Back"} />
               </IonButtons>
             )}
-          </IonToolbar>
+          </LayoutToolbarStyled>
         </IonHeader>
       )}
       <LayoutContentStyled fullscreen>{children}</LayoutContentStyled>

@@ -17,7 +17,7 @@ export const Home: React.FC = () => {
   useSetWatcher();
   useCategoryWatcher();
   return (
-    <Layout title={"home"}>
+    <Layout title={"memoshift"}>
       <h3>home</h3>
       <IonItem>
         <Link to={"/category/create"}>Create category</Link>

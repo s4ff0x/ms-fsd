@@ -22,7 +22,7 @@ export const useSetWatcher = () => {
         result.push(adaptEntityForUi(doc));
       });
 
-      setStore.update(result);
+      setStore.updateSets(result);
     });
     return () => unsubscribe();
   }, []);

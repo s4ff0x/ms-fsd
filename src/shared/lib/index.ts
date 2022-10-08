@@ -1,2 +1,2 @@
 export * from "./common";
-export * from "./store-logger";
+export * from "shared/lib/store-logger";

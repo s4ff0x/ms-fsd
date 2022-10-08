@@ -8,7 +8,7 @@ class CategoryStore {
     makeAutoObservable(this);
   }
 
-  @action update(categories: ICategory[]) {
+  @action updateCategories(categories: ICategory[]) {
     this.categories = categories;
   }
 }

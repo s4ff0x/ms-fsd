@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { Level } from "../../lib";
 
@@ -56,4 +57,8 @@ export const TextStyled = styled.div<TextProps>`
       text-overflow: ellipsis;
       white-space: nowrap;
     `}
+`;
+
+export const LinkStyled = styled(Link)`
+  text-decoration: none;
 `;

@@ -23,7 +23,7 @@ export const useCategoryWatcher = () => {
         result.push(adaptEntityForUi(doc));
       });
 
-      categoryStore.update(result);
+      categoryStore.updateCategories(result);
     });
     return () => unsubscribe();
   }, []);
