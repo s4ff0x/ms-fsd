@@ -1,12 +1,11 @@
 export interface ITerm {
-  uid: string;
   term: string;
+  uid: string;
   definition: string;
-}
-
-export interface ITermEditable extends ITerm {
-  onChange?: (term: string, definition: string) => void;
-  onDelete?: () => void;
+  confidence: number;
+  createdAt?: number;
+  updatedAt?: number;
+  isInitial: boolean;
 }
 
 export interface ISet {
@@ -22,3 +21,16 @@ export interface ISetForCreation {
   name: string;
   terms: ITerm[];
 }
+
+export interface ITermCardEditableProps extends ITerm {
+  onChange?: (term: string, definition: string) => void;
+  onDelete?: () => void;
+}
+
+export type ITermCardProps = {
+  term: string;
+  definition: string;
+  isInitial: boolean;
+  confidence: number;
+  uid: string;
+};

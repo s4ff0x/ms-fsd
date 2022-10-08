@@ -1,27 +1,34 @@
-import { IonInput } from "@ionic/react";
-import { ITermEditable } from "../";
+import { IonIcon, IonInput } from "@ionic/react";
+import { closeOutline } from "ionicons/icons";
+import { Dot } from "shared/ui";
+import { getTermColor, ITermCardEditableProps } from "../";
+import { TermCardHeadingStyled, TermCardStyled } from "./term-card.styles";
 
 export const TermCardEditable = ({
   term,
   definition,
+  confidence,
+  isInitial,
   onChange = () => {},
   onDelete = () => {},
-}: ITermEditable) => {
+}: ITermCardEditableProps) => {
   return (
-    <div>
-      <button onClick={onDelete}>Delete</button>
+    <TermCardStyled>
+      <IonIcon slot="icon-only" icon={closeOutline} onClick={onDelete} />
+      <TermCardHeadingStyled>
+        <Dot color={getTermColor(confidence, isInitial)} />
+        <IonInput
+          placeholder="Term"
+          value={term}
+          onIonChange={(e: CustomEvent) => onChange(e.detail.value, definition)}
+        />
+      </TermCardHeadingStyled>
+
       <IonInput
-        type="text"
-        placeholder={"term"}
-        onIonChange={(e: CustomEvent) => onChange(e.detail.value, definition)}
-        value={term}
-      />
-      <IonInput
-        type="text"
-        placeholder={"definition"}
-        onIonChange={(e: CustomEvent) => onChange(term, e.detail.value)}
+        placeholder="Definition"
         value={definition}
+        onIonChange={(e: CustomEvent) => onChange(term, e.detail.value)}
       />
-    </div>
+    </TermCardStyled>
   );
 };

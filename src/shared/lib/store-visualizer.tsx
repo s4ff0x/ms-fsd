@@ -15,16 +15,17 @@ const MobxStoreVisualizer = ({ data }: any) => {
         zIndex: 1000,
         position: "fixed",
         top: 0,
-        paddingTop: 20,
+        paddingTop: 15,
         right: 0,
       }}
     >
       <button
         onClick={() => setOpen((open) => !open)}
         style={{
-          width: 20,
-          height: 20,
+          width: 15,
+          height: 15,
           display: "flex",
+          fontSize: 10,
           alignItems: "center",
           justifyContent: "center",
           background: "orange",
@@ -40,7 +41,7 @@ const MobxStoreVisualizer = ({ data }: any) => {
   );
 };
 
-export const initStoreLogger = (items: ILoggerItem[]) => {
+export const initStoreVisualizer = (items: ILoggerItem[]) => {
   if (process.env.NODE_ENV === "development") {
     const domContainer = document.createElement("div");
     domContainer.id = "__mobx_visualizer__";

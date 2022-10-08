@@ -1,10 +1,22 @@
-import { ITerm } from "../";
+import { IonInput } from "@ionic/react";
+import { Dot } from "shared/ui";
+import { getTermColor, ITermCardProps } from "../";
+import { TermCardHeadingStyled, TermCardStyled } from "./term-card.styles";
 
-export const TermCard = ({ term, definition }: ITerm) => {
+export const TermCard = ({
+  term,
+  definition,
+  confidence,
+  isInitial,
+}: ITermCardProps) => {
   return (
-    <div>
-      <div>Term: {term}</div>
-      <div>Definition: {definition}</div>
-    </div>
+    <TermCardStyled>
+      <TermCardHeadingStyled>
+        <Dot color={getTermColor(confidence, isInitial)} />
+        <IonInput placeholder="Term" value={term} />
+      </TermCardHeadingStyled>
+
+      <IonInput placeholder="Definition" value={definition} />
+    </TermCardStyled>
   );
 };
