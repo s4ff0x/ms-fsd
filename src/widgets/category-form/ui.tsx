@@ -1,20 +1,9 @@
 import { Controller, useForm } from "react-hook-form";
-import styled from "styled-components";
 import { useUpdateCategory } from "features/category/update-category";
 import { ICategory } from "entities/category";
 import { ButtonStyled, Input } from "shared/ui";
 import { defaultValues } from "./config";
-
-export const FormStyled = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  > ${ButtonStyled} {
-    width: auto;
-    margin-right: auto;
-  }
-`;
+import { FormStyled } from "./styles";
 
 export const CategoryForm = ({ category }: { category?: ICategory }) => {
   const isUpdate = !!category;

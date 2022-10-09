@@ -1,21 +1,10 @@
 import { Controller, useForm } from "react-hook-form";
-import styled from "styled-components";
 import { TermEditor } from "features/set/term-editor";
 import { useUpdateSet } from "features/set/update-set";
 import { ISet, ITerm } from "entities/set";
 import { ButtonStyled, Input } from "shared/ui";
 import { defaultValues } from "./config";
-
-export const UpdateSetFormStyled = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  > ${ButtonStyled} {
-    width: auto;
-    margin-right: auto;
-  }
-`;
+import { UpdateSetFormStyled } from "./styles";
 
 export const SetForm = ({ set }: { set?: ISet }) => {
   const isUpdate = !!set;
