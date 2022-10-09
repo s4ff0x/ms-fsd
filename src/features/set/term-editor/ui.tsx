@@ -1,15 +1,9 @@
 import { useCallback } from "react";
-import styled from "styled-components";
 import { TermCardEditable, TermList } from "entities/set";
 import { ButtonStyled } from "shared/ui";
 import { ITermEditorProps } from "./lib";
 import { onAddTerm, onChange, onDelete } from "./model";
-
-export const TermEditorStyled = styled.div`
-  > ${ButtonStyled} {
-    margin-top: 1rem;
-  }
-`;
+import { TermEditorStyled } from "./styles";
 
 export const TermEditor = ({ terms, setTerms }: ITermEditorProps) => {
   const onAddTermHandler = useCallback(() => {

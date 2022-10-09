@@ -1,12 +1,6 @@
 import { Children, ReactNode } from "react";
-import styled from "styled-components";
 import { EMPTY_SET_TITLE } from "../config";
-
-export const TermListStyled = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-`;
+import { TermListStyled } from "./term-list.styles";
 
 export const TermList = ({ children }: { children: ReactNode }) => {
   return (
