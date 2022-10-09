@@ -24,7 +24,7 @@ import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
 
 /* Theme variables */
-import "app/theme/global.scss";
+import "app/styles/global.scss";
 
 import { homeOutline, settingsOutline } from "ionicons/icons";
 import { autorun } from "mobx";
