@@ -9,6 +9,10 @@ html {
   height: 0;
   display: none;
 }
+ion-app {
+  max-width: 1024px;
+  margin: 0 auto;
+}
 ion-item {
   --background: none;
   --border-color: transparent;

@@ -11,6 +11,7 @@ export const UpdateCategoryPage = () => {
   );
 
   if (!category) return null;
+
   return (
     <Layout title={"Update Category"} withBackButton>
       <CategoryForm category={category} />

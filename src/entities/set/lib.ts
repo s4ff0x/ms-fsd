@@ -1,4 +1,4 @@
-import { uid } from "shared/lib";
+import { uid } from "shared/lib/common";
 import { ITerm } from "./model";
 
 export const getNewTerm = () => ({

@@ -44,7 +44,7 @@ import {
 } from "entities/router";
 import { setStore } from "entities/set";
 import { userStore, useUserWatcher } from "entities/user";
-import { updateStoreVisualizer } from "shared/lib";
+import { updateStoreVisualizer } from "shared/lib/store-visualizer";
 import { TabsStyled } from "shared/ui";
 
 setupIonicReact();

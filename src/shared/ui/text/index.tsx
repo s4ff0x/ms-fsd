@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { Level } from "../../lib";
+import { Level } from "../../lib/common";
 
 export type TextProps = {
   children?: ReactNode;
@@ -61,4 +61,7 @@ export const TextStyled = styled.div<TextProps>`
 
 export const LinkStyled = styled(Link)`
   text-decoration: none;
+  ${TextStyled} {
+    color: inherit;
+  }
 `;

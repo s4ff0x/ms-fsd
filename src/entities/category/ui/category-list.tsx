@@ -1,27 +1,7 @@
-import { observer } from "mobx-react-lite";
-import { EMPTY_CATEGORY_LIST_TITLE } from "../config";
-import { categoryStore } from "../model";
+import styled from "styled-components";
 
-export const CategoryList = observer(
-  ({ onClick }: { onClick: (uid: string) => void }) => {
-    return (
-      <div>
-        {categoryStore.categories.length ? (
-          categoryStore.categories.map((category) => (
-            <div
-              key={category.uid}
-              onClick={() => {
-                onClick(category.uid);
-              }}
-            >
-              <div>{category.name}</div>
-              <div>{category.uid}</div>
-            </div>
-          ))
-        ) : (
-          <div>{EMPTY_CATEGORY_LIST_TITLE}</div>
-        )}
-      </div>
-    );
-  }
-);
+export const CategoryListStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;

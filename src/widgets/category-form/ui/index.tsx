@@ -28,6 +28,7 @@ export const CategoryForm = ({ category }: { category?: ICategory }) => {
           <Input
             inputProps={{
               type: "text",
+              value: field.value,
               placeholder: "name",
               onIonChange: (e: CustomEvent) => field.onChange(e.detail.value),
             }}

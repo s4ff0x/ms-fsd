@@ -1,34 +1,34 @@
-import { IonItem } from "@ionic/react";
+import { observer } from "mobx-react-lite";
 import React from "react";
-import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
-import { SignOut } from "features/auth";
-import { CategoryList } from "entities/category";
 import {
-  getCategoryUpdateRouteDynamic,
-  SET_ROUTE_CREATE,
-  getSetRouteUpdateDynamic,
-} from "entities/router";
-import { SetList } from "entities/set";
-import { Layout } from "shared/ui";
+  CategoryListStyled,
+  categoryStore,
+  EMPTY_CATEGORY_LIST_TITLE,
+} from "entities/category";
+import { getCategoryUpdateRouteDynamic } from "entities/router";
+import { EMPTY_SET_LIST_TITLE } from "entities/set";
+import { Layout, ScrollableSection, TitledBlock } from "shared/ui";
 
-export const HomePage: React.FC = () => {
-  const history = useHistory();
-
+export const HomePage: React.FC = observer(() => {
   return (
     <Layout title={"memoshift"}>
-      <h3>home</h3>
-      <IonItem>
-        <Link to={"/category/create"}>Create category</Link>
-      </IonItem>
-      <CategoryList
-        onClick={(uid) => history.push(getCategoryUpdateRouteDynamic(uid))}
-      />
-      <IonItem>
-        <Link to={SET_ROUTE_CREATE}>Create set</Link>
-      </IonItem>
-      <SetList onClick={(uid) => history.push(getSetRouteUpdateDynamic(uid))} />
-      <SignOut />
+      <TitledBlock title={"Hey, you"} subTitle={"Ready for studying?"} />
+      <CategoryListStyled>
+        {categoryStore.categories.length
+          ? categoryStore.categories.map((category) => (
+              <ScrollableSection
+                title={category.name}
+                emptyPlaceholder={EMPTY_SET_LIST_TITLE}
+                link={{
+                  text: "Edit",
+                  to: getCategoryUpdateRouteDynamic(category.uid),
+                }}
+              >
+                we
+              </ScrollableSection>
+            ))
+          : EMPTY_CATEGORY_LIST_TITLE}
+      </CategoryListStyled>
     </Layout>
   );
-};
+});
