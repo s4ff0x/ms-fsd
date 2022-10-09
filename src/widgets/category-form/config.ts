@@ -1,1 +1,1 @@
-export const defaultValues = { name: "" };
+export const defaultValues = { name: "", setIds: [] };

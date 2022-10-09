@@ -1,4 +1,5 @@
 import { Controller, useForm } from "react-hook-form";
+import { CategorySetsHandler } from "features/category/category-sets-handler";
 import { useUpdateCategory } from "features/category/update-category";
 import { ICategory } from "entities/category";
 import { ButtonStyled, Input } from "shared/ui";
@@ -8,7 +9,9 @@ import { FormStyled } from "./styles";
 export const CategoryForm = ({ category }: { category?: ICategory }) => {
   const isUpdate = !!category;
   const { handleSubmit, control } = useForm({
-    defaultValues: !isUpdate ? defaultValues : { name: category.name },
+    defaultValues: !isUpdate
+      ? defaultValues
+      : { name: category.name, setIds: category.setIds },
   });
 
   const { createCategory, updateCategory, deleteCategory } =
@@ -35,6 +38,16 @@ export const CategoryForm = ({ category }: { category?: ICategory }) => {
           >
             Name
           </Input>
+        )}
+      />
+      <Controller
+        name="setIds"
+        control={control}
+        render={({ field }) => (
+          <CategorySetsHandler
+            data={field.value}
+            setData={(setIds) => field.onChange(setIds)}
+          />
         )}
       />
 
