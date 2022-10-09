@@ -34,6 +34,7 @@ import { Redirect, Route } from "react-router-dom";
 import { AuthRouter } from "app/auth-router";
 import { HomeRouter } from "app/home-router";
 import { SettingsRouter } from "pages/settings";
+import { ActionCreateNew } from "features/action-create-new";
 import { categoryStore } from "entities/category";
 import {
   HOME_ROUTE,
@@ -65,7 +66,6 @@ const App: React.FC = observer(() => {
         <TabsStyled>
           <IonRouterOutlet>
             <Route path={HOME_ROUTE} component={HomeRouter} />
-            {/*<Route path="/search" component={Search} exact />*/}
             <Route path={SETTINGS_ROUTE} component={SettingsRouter} />
 
             <Route exact path={["/", SIGN_IN_ROUTE, SIGN_OUT_ROUTE]}>
@@ -76,14 +76,11 @@ const App: React.FC = observer(() => {
             <IonTabButton tab="home" href={HOME_ROUTE}>
               <IonIcon icon={homeOutline} />
             </IonTabButton>
-            {/*<IonTabButton tab="search" href={"/search"}>*/}
-            {/*  <IonIcon icon={searchOutline} />*/}
-            {/*</IonTabButton>*/}
-            {/*<IonTabButton tab="new">*/}
-            {/*  <IonButton onClick={showActionSheet}>*/}
-            {/*    <IonIcon icon={addOutline} />*/}
-            {/*  </IonButton>*/}
-            {/*</IonTabButton>*/}
+
+            <IonTabButton tab="new">
+              <ActionCreateNew />
+            </IonTabButton>
+
             <IonTabButton tab="settings" href={SETTINGS_ROUTE}>
               <IonIcon icon={settingsOutline} />
             </IonTabButton>
