@@ -5,7 +5,7 @@ import {
   AuthFlexLayout,
   AuthNavBlock,
 } from "entities/auth";
-import { getSignInRoute } from "entities/router";
+import { SIGN_IN_ROUTE } from "entities/router";
 import { ButtonStyled, Layout, TitledBlock } from "shared/ui";
 
 export const SignUpPage = () => {
@@ -24,7 +24,7 @@ export const SignUpPage = () => {
           <AuthNavBlock
             text={"Already have an account?"}
             linkText={"Sign in"}
-            linkRoute={getSignInRoute()}
+            linkRoute={SIGN_IN_ROUTE}
           />
         </AuthBottomBlockStyled>
       </AuthFlexLayout>

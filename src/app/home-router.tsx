@@ -1,17 +1,15 @@
-import { IonRouterOutlet } from "@ionic/react";
-import { Redirect, Route } from "react-router-dom";
+import { IonPage, IonRouterOutlet } from "@ionic/react";
+import { Route } from "react-router-dom";
 import { CreateCategoryPage, UpdateCategoryPage } from "pages/category";
-import { Home } from "pages/home";
+import { HomePage } from "pages/home";
 import { CreateSetPage, UpdateSetPage } from "pages/set";
 import { useCategoryWatcher } from "entities/category";
 import {
-  getCategoryCreateRoute,
-  getCategoryUpdateRoute,
-  getHomeRoute,
-  getSetRouteCreate,
-  getSetRouteUpdate,
-  getSignInRoute,
-  getSignOutRoute,
+  CATEGORY_CREATE_ROUTE,
+  CATEGORY_UPDATE_ROUTE,
+  HOME_ROUTE,
+  SET_ROUTE_CREATE,
+  SET_ROUTE_UPDATE,
 } from "entities/router";
 import { useSetWatcher } from "entities/set";
 
@@ -20,32 +18,29 @@ export const HomeRouter = () => {
   useCategoryWatcher();
 
   return (
-    <IonRouterOutlet>
-      {/* Home */}
-      <Route exact path={getHomeRoute()}>
-        <Home />
-      </Route>
+    <IonPage>
+      <IonRouterOutlet>
+        {/* Home */}
+        <Route exact path={HOME_ROUTE}>
+          <HomePage />
+        </Route>
 
-      {/* Set */}
-      <Route exact path={getSetRouteCreate()}>
-        <CreateSetPage />
-      </Route>
-      <Route exact path={getSetRouteUpdate()}>
-        <UpdateSetPage />
-      </Route>
+        {/* Set */}
+        <Route exact path={SET_ROUTE_CREATE}>
+          <CreateSetPage />
+        </Route>
+        <Route exact path={SET_ROUTE_UPDATE}>
+          <UpdateSetPage />
+        </Route>
 
-      {/* Category */}
-      <Route exact path={getCategoryCreateRoute()}>
-        <CreateCategoryPage />
-      </Route>
-      <Route exact path={getCategoryUpdateRoute()}>
-        <UpdateCategoryPage />
-      </Route>
-
-      {/* Redirect */}
-      <Route exact path={["/", getSignInRoute(), getSignOutRoute()]}>
-        <Redirect to={getHomeRoute()} />
-      </Route>
-    </IonRouterOutlet>
+        {/* Category */}
+        <Route exact path={CATEGORY_CREATE_ROUTE}>
+          <CreateCategoryPage />
+        </Route>
+        <Route exact path={CATEGORY_UPDATE_ROUTE}>
+          <UpdateCategoryPage />
+        </Route>
+      </IonRouterOutlet>
+    </IonPage>
   );
 };

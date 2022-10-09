@@ -1,4 +1,11 @@
-import { IonApp, setupIonicReact } from "@ionic/react";
+import {
+  IonApp,
+  IonIcon,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  setupIonicReact,
+} from "@ionic/react";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -19,15 +26,25 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "app/theme/global.scss";
 
+import { homeOutline, settingsOutline } from "ionicons/icons";
 import { autorun } from "mobx";
 import { observer } from "mobx-react-lite";
 
+import { Redirect, Route } from "react-router-dom";
 import { AuthRouter } from "app/auth-router";
 import { HomeRouter } from "app/home-router";
+import { SettingsRouter } from "pages/settings";
 import { categoryStore } from "entities/category";
+import {
+  HOME_ROUTE,
+  SETTINGS_ROUTE,
+  SIGN_IN_ROUTE,
+  SIGN_OUT_ROUTE,
+} from "entities/router";
 import { setStore } from "entities/set";
 import { userStore, useUserWatcher } from "entities/user";
 import { updateStoreVisualizer } from "shared/lib";
+import { TabsStyled } from "shared/ui";
 
 setupIonicReact();
 
@@ -44,7 +61,35 @@ const App: React.FC = observer(() => {
 
   return (
     <IonApp>
-      {userStore.shouldShowUserContent && <HomeRouter />}
+      {userStore.shouldShowUserContent && (
+        <TabsStyled>
+          <IonRouterOutlet>
+            <Route path={HOME_ROUTE} component={HomeRouter} />
+            {/*<Route path="/search" component={Search} exact />*/}
+            <Route path={SETTINGS_ROUTE} component={SettingsRouter} />
+
+            <Route exact path={["/", SIGN_IN_ROUTE, SIGN_OUT_ROUTE]}>
+              <Redirect to={HOME_ROUTE} />
+            </Route>
+          </IonRouterOutlet>
+          <IonTabBar slot="bottom">
+            <IonTabButton tab="home" href={HOME_ROUTE}>
+              <IonIcon icon={homeOutline} />
+            </IonTabButton>
+            {/*<IonTabButton tab="search" href={"/search"}>*/}
+            {/*  <IonIcon icon={searchOutline} />*/}
+            {/*</IonTabButton>*/}
+            {/*<IonTabButton tab="new">*/}
+            {/*  <IonButton onClick={showActionSheet}>*/}
+            {/*    <IonIcon icon={addOutline} />*/}
+            {/*  </IonButton>*/}
+            {/*</IonTabButton>*/}
+            <IonTabButton tab="settings" href={SETTINGS_ROUTE}>
+              <IonIcon icon={settingsOutline} />
+            </IonTabButton>
+          </IonTabBar>
+        </TabsStyled>
+      )}
       {userStore.shouldShowAuth && <AuthRouter />}
     </IonApp>
   );

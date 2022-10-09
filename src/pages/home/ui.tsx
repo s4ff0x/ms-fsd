@@ -6,13 +6,13 @@ import { SignOut } from "features/auth";
 import { CategoryList } from "entities/category";
 import {
   getCategoryUpdateRouteDynamic,
-  getSetRouteCreate,
+  SET_ROUTE_CREATE,
   getSetRouteUpdateDynamic,
 } from "entities/router";
 import { SetList } from "entities/set";
 import { Layout } from "shared/ui";
 
-export const Home: React.FC = () => {
+export const HomePage: React.FC = () => {
   const history = useHistory();
 
   return (
@@ -25,7 +25,7 @@ export const Home: React.FC = () => {
         onClick={(uid) => history.push(getCategoryUpdateRouteDynamic(uid))}
       />
       <IonItem>
-        <Link to={getSetRouteCreate()}>Create set</Link>
+        <Link to={SET_ROUTE_CREATE}>Create set</Link>
       </IonItem>
       <SetList onClick={(uid) => history.push(getSetRouteUpdateDynamic(uid))} />
       <SignOut />
