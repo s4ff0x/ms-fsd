@@ -29,7 +29,7 @@ export const ScrollableSection = ({
   return (
     <ScrollableSectionStyled>
       <HeadingStyled>
-        <TextStyled size={"2"} boldness={"3"} onClick={onTitleClick}>
+        <TextStyled size={"2"} boldness={"2"} onClick={onTitleClick}>
           {title}
         </TextStyled>
         {link && (

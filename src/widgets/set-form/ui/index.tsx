@@ -31,6 +31,7 @@ export const SetForm = ({ set }: { set?: ISet }) => {
             inputProps={{
               type: "text",
               placeholder: "name",
+              value: field.value,
               onIonChange: (e: CustomEvent) => field.onChange(e.detail.value),
             }}
           >
