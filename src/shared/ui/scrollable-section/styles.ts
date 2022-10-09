@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { LinkStyled, TextStyled } from "shared/ui/text";
+import { LinkStyled } from "shared/ui/text";
 
 export const ContentStyled = styled.div`
   overflow: auto;
@@ -22,8 +22,5 @@ export const ScrollableSectionStyled = styled.div`
     ${LinkStyled} {
       color: var(--accent);
     }
-  }
-  > ${TextStyled} {
-    margin-top: 1.5rem;
   }
 `;

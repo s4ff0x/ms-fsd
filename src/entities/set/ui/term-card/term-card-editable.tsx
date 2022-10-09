@@ -1,7 +1,7 @@
 import { IonIcon, IonInput } from "@ionic/react";
 import { closeOutline } from "ionicons/icons";
+import { getTermColor, ITermCardEditableProps } from "entities/set/index";
 import { Dot } from "shared/ui";
-import { getTermColor, ITermCardEditableProps } from "../";
 import { TermCardHeadingStyled, TermCardStyled } from "./term-card.styles";
 
 export const TermCardEditable = ({

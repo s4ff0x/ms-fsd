@@ -1,5 +1,5 @@
 import { Children, ReactNode } from "react";
-import { EMPTY_SET_TITLE } from "../config";
+import { EMPTY_SET_TITLE } from "../../config";
 import { TermListStyled } from "./term-list.styles";
 
 export const TermList = ({ children }: { children: ReactNode }) => {

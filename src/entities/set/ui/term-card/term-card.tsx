@@ -1,6 +1,6 @@
 import { IonInput } from "@ionic/react";
+import { getTermColor, ITermCardProps } from "entities/set/index";
 import { Dot } from "shared/ui";
-import { getTermColor, ITermCardProps } from "../";
 import { TermCardHeadingStyled, TermCardStyled } from "./term-card.styles";
 
 export const TermCard = ({

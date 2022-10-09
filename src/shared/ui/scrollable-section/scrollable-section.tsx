@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { Children, ReactNode } from "react";
 import { LinkStyled, TextStyled } from "shared/ui/text";
 import {
   ContentStyled,
@@ -14,7 +14,6 @@ export interface ScrollableSectionProps {
   onTitleClick?: () => void;
   title: string;
   children: ReactNode;
-  empty?: boolean;
   emptyPlaceholder: string;
 }
 
@@ -22,7 +21,6 @@ export const ScrollableSection = ({
   link,
   children,
   title,
-  empty,
   emptyPlaceholder,
   onTitleClick,
 }: ScrollableSectionProps) => {
@@ -41,7 +39,9 @@ export const ScrollableSection = ({
         )}
       </HeadingStyled>
       <ContentStyled>{children}</ContentStyled>
-      {empty && <TextStyled brightness={"2"}>{emptyPlaceholder}</TextStyled>}
+      {Children.toArray(children).length === 0 && (
+        <TextStyled brightness={"2"}>{emptyPlaceholder}</TextStyled>
+      )}
     </ScrollableSectionStyled>
   );
 };

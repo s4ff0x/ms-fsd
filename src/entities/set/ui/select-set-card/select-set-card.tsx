@@ -1,6 +1,7 @@
 import { BsCheck } from "react-icons/bs";
 import { VscChevronRight } from "react-icons/vsc";
 import { TextStyled } from "shared/ui";
+import { NONAME_SET_TITLE } from "../../config";
 import { RadioStyled, SelectSetCardStyled } from "./select-set-card.styles";
 
 export type TSelectSetCardProps = {
@@ -29,7 +30,7 @@ export const SelectSetCard = ({
         </RadioStyled>
       )}
       <TextStyled size={"2"} boldness={"3"} ellipsis>
-        {name}
+        {name || NONAME_SET_TITLE}
       </TextStyled>
       <TextStyled size={"1"} brightness={"2"}>
         {termCount} cards
