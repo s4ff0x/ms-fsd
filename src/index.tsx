@@ -1,7 +1,7 @@
 import { IonReactRouter } from "@ionic/react-router";
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "app/App";
+import App from "app/app";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 

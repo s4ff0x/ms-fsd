@@ -22,8 +22,8 @@ import "app/theme/global.scss";
 import { autorun } from "mobx";
 import { observer } from "mobx-react-lite";
 
-import Router from "app/router";
-
+import { AuthContainer } from "app/auth-container";
+import { HomeContainer } from "app/home-container";
 import { categoryStore } from "entities/category";
 import { setStore } from "entities/set";
 import { userStore, useUserWatcher } from "entities/user";
@@ -44,7 +44,8 @@ const App: React.FC = observer(() => {
 
   return (
     <IonApp>
-      <Router />
+      {userStore.shouldShowUserContent && <HomeContainer />}
+      {userStore.shouldShowAuth && <AuthContainer />}
     </IonApp>
   );
 });
