@@ -41,6 +41,7 @@ import {
   SETTINGS_ROUTE,
   SIGN_IN_ROUTE,
   SIGN_OUT_ROUTE,
+  SIGN_UP_ROUTE,
 } from "entities/router";
 import { setStore } from "entities/set";
 import { userStore, useUserWatcher } from "entities/user";
@@ -68,7 +69,10 @@ const App: React.FC = observer(() => {
             <Route path={HOME_ROUTE} component={HomeRouter} />
             <Route path={SETTINGS_ROUTE} component={SettingsRouter} />
 
-            <Route exact path={["/", SIGN_IN_ROUTE, SIGN_OUT_ROUTE]}>
+            <Route
+              exact
+              path={["/", SIGN_IN_ROUTE, SIGN_OUT_ROUTE, SIGN_UP_ROUTE]}
+            >
               <Redirect to={HOME_ROUTE} />
             </Route>
           </IonRouterOutlet>
