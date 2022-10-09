@@ -41,9 +41,10 @@ const MobxStoreVisualizer = ({ data }: any) => {
   );
 };
 
-export const initStoreVisualizer = (items: ILoggerItem[]) => {
+export const updateStoreVisualizer = (items: ILoggerItem[]) => {
   if (process.env.NODE_ENV === "development") {
     const domContainer = document.createElement("div");
+    document.getElementById("__mobx_visualizer__")?.remove();
     domContainer.id = "__mobx_visualizer__";
 
     document.body.appendChild(domContainer);

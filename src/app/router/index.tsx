@@ -1,5 +1,4 @@
 import { IonRouterOutlet } from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
 import { observer } from "mobx-react-lite";
 import { Redirect, Route } from "react-router-dom";
 import { SignInPage, SignUpPage } from "pages/auth";
@@ -21,7 +20,7 @@ import { userStore } from "entities/user";
 
 export default observer(() => {
   return (
-    <IonReactRouter>
+    <>
       {userStore.shouldShowUserContent && (
         <IonRouterOutlet>
           {/* Home */}
@@ -64,6 +63,6 @@ export default observer(() => {
           </Route>
         </IonRouterOutlet>
       )}
-    </IonReactRouter>
+    </>
   );
 });
