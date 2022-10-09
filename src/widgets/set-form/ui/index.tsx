@@ -3,7 +3,7 @@ import { TermEditor } from "features/set/term-editor";
 import { useUpdateSet } from "features/set/update-set";
 import { ISet, ITerm } from "entities/set";
 import { ButtonStyled, Input } from "shared/ui";
-import { defaultValues } from "./config";
+import { defaultValues } from "../config";
 import { UpdateSetFormStyled } from "./styles";
 
 export const SetForm = ({ set }: { set?: ISet }) => {

@@ -2,7 +2,7 @@ import { Controller, useForm } from "react-hook-form";
 import { useUpdateCategory } from "features/category/update-category";
 import { ICategory } from "entities/category";
 import { ButtonStyled, Input } from "shared/ui";
-import { defaultValues } from "./config";
+import { defaultValues } from "../config";
 import { FormStyled } from "./styles";
 
 export const CategoryForm = ({ category }: { category?: ICategory }) => {

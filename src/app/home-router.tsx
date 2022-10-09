@@ -15,7 +15,7 @@ import {
 } from "entities/router";
 import { useSetWatcher } from "entities/set";
 
-export const HomeContainer = () => {
+export const HomeRouter = () => {
   useSetWatcher();
   useCategoryWatcher();
 

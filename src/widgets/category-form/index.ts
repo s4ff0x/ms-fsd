@@ -1,1 +1,1 @@
-export * from "./ui";
+export { CategoryForm } from "./ui";

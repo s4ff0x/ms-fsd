@@ -3,7 +3,7 @@ import { Redirect, Route } from "react-router-dom";
 import { SignInPage, SignUpPage } from "pages/auth";
 import { getHomeRoute, getSignInRoute, getSignUpRoute } from "entities/router";
 
-export const AuthContainer = () => {
+export const AuthRouter = () => {
   return (
     <IonRouterOutlet>
       <Route exact path={getSignInRoute()}>
