@@ -1,10 +1,10 @@
 import React from "react";
-import { useSignInEmail } from "features/auth";
 import {
   AuthBottomBlockStyled,
   AuthFlexLayout,
   AuthNavBlock,
-} from "entities/auth";
+  useSignInEmail,
+} from "features/auth";
 import { SIGN_UP_ROUTE } from "entities/router";
 import { ButtonStyled, Layout, TitledBlock } from "shared/ui";
 
