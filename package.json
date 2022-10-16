@@ -52,7 +52,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "depcruise:archi": "depcruise --version && depcruise --config fsd-depcruise-config.js --output-type archi src | dot -T svg | depcruise-wrap-stream-in-html > fsd-high-level-dependencies.html"
   },
   "eslintConfig": {
     "extends": [
@@ -90,6 +91,7 @@
     "@typescript-eslint/parser": "^5.39.0",
     "babel-plugin-styled-components": "^2.0.7",
     "customize-cra": "^1.0.0",
+    "dependency-cruiser": "^11.16.1",
     "eslint-import-resolver-typescript": "^3.5.1",
     "eslint-plugin-boundaries": "^3.0.0",
     "eslint-plugin-import": "^2.26.0",
