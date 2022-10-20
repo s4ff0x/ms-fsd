@@ -11,6 +11,15 @@ export * from "firebase/auth";
 export { collection, onSnapshot, query, where } from "firebase/firestore";
 
 export const getCurrentUserUID = () => auth.currentUser?.uid || "";
+export const getDisplayName = () =>
+  auth.currentUser?.displayName || auth.currentUser?.uid;
+export const getEmail = () => auth.currentUser?.email;
+export const getPhotoURL = () => auth.currentUser?.photoURL;
+export const getUserData = () => ({
+  email: getEmail() || "",
+  photoURL: getPhotoURL() || "",
+  displayName: getDisplayName() || "",
+});
 
 export const adaptEntityForUi = (doc: any) => {
   return {

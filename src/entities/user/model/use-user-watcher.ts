@@ -16,11 +16,12 @@ export const useUserWatcher = () => {
       auth,
       (userCredential: User | null) => {
         if (userCredential) {
-          const { uid, email, displayName } = userCredential;
+          const { uid, email, displayName, photoURL } = userCredential;
           userStore.updateUser({
             uid,
             email,
             displayName,
+            photoURL,
           });
         } else {
           userStore.updateUser(null);
