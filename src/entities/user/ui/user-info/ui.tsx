@@ -9,10 +9,10 @@ export const UserInfo = ({ photoURL, displayName, email }: TUserInfoProps) => {
   return (
     <UserInfoStyled>
       <Avatar photoURL={photoURL} />
-      <TextStyled size={"3"} ellipsis>
+      <TextStyled size={"2"} ellipsis boldness={"5"}>
         {email}
       </TextStyled>
-      <TextStyled size={"3"} ellipsis>
+      <TextStyled size={"2"} ellipsis boldness={"5"}>
         {displayName}
       </TextStyled>
     </UserInfoStyled>

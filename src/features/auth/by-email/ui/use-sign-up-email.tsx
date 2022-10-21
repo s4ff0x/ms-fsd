@@ -4,15 +4,29 @@ import { signUpEmailPass } from "../model";
 
 export const useSignUpEmail = () => {
   const emailRef = useRef("");
+  const displayNameRef = useRef("");
   const passRef = useRef("");
   return {
     signUpEmailHandler: () =>
-      signUpEmailPass(emailRef.current, passRef.current),
+      signUpEmailPass(
+        emailRef.current,
+        passRef.current,
+        displayNameRef.current
+      ),
     signUpEmail: (
       <>
         <Input
           inputProps={{
-            placeholder: "email",
+            placeholder: "Display name",
+            onIonChange: (e: CustomEvent) =>
+              (displayNameRef.current = e.detail.value),
+          }}
+        >
+          Display name
+        </Input>
+        <Input
+          inputProps={{
+            placeholder: "Email",
             onIonChange: (e: CustomEvent) =>
               (emailRef.current = e.detail.value),
           }}
@@ -21,7 +35,7 @@ export const useSignUpEmail = () => {
         </Input>
         <Input
           inputProps={{
-            placeholder: "password",
+            placeholder: "Password",
             type: "password",
             onIonChange: (e: CustomEvent) => (passRef.current = e.detail.value),
           }}

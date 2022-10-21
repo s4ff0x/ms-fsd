@@ -4,7 +4,9 @@ import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "shared/api";
+import { getGravatarURL } from "shared/lib/common";
 
 export const signInEmailPass = async (email: string, password: string) => {
   const {
@@ -13,9 +15,16 @@ export const signInEmailPass = async (email: string, password: string) => {
   return { uid, displayName, email: userEmail } as IUser;
 };
 
-export const signUpEmailPass = async (email: string, password: string) => {
+export const signUpEmailPass = async (
+  email: string,
+  password: string,
+  displayNameForSignUp: string
+) => {
   const { user } = await createUserWithEmailAndPassword(auth, email, password);
-
+  await updateProfile(user, {
+    displayName: displayNameForSignUp,
+    photoURL: getGravatarURL(user.uid),
+  });
   await sendEmailVerification(user);
   // TODO: make it better
   const { uid, displayName, email: userEmail } = user;
