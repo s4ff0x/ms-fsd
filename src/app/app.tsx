@@ -35,6 +35,7 @@ import { AuthRouter } from "app/auth-router";
 import { HomeRouter } from "app/home-router";
 import { SettingsRouter } from "pages/settings";
 import { ActionCreateNew } from "features/action-create-new";
+import { useAuthWatcher } from "features/auth";
 import { categoryStore } from "entities/category";
 import {
   HOME_ROUTE,
@@ -44,7 +45,7 @@ import {
   SIGN_UP_ROUTE,
 } from "entities/router";
 import { setStore } from "entities/set";
-import { userStore, useUserWatcher } from "entities/user";
+import { userStore } from "entities/user";
 import { updateStoreVisualizer } from "shared/lib/store-visualizer";
 import { TabsStyled } from "shared/ui";
 
@@ -59,7 +60,7 @@ autorun(() => {
 });
 
 const App: React.FC = observer(() => {
-  useUserWatcher();
+  useAuthWatcher();
 
   return (
     <IonApp>

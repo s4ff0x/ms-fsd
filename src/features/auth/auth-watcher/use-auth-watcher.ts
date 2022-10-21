@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useHistory } from "react-router";
+import { userStore } from "entities/user";
 import { auth, onAuthStateChanged, User } from "shared/api";
-import { userStore } from "./store";
 
-export const useUserWatcher = () => {
+export const useAuthWatcher = () => {
   const history = useHistory();
 
   // TODO: improve it (how to manage redirects from unknown page in Ionic?)
